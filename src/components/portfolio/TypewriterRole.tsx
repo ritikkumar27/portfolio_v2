@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const ROLES = [
   "Aspiring DevOps Engineer",
   "I use Cachy OS with Niri wm ; it's Arch Btw",
+  "Learning Networking Concepts",
   "Systems Designer",
   "Blogging what i learn everyday"
 ];
