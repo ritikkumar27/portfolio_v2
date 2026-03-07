@@ -128,7 +128,7 @@ export default function HeroSection() {
             transition={{ duration: 2, repeat: Infinity }}
           />
           <Link href="#contact">
-            <span className="text-green-700 dark:text-green-300 text-sm font-medium">
+            <span className="text-red-700 dark:text-red-300 text-sm font-medium">
               Available for projects
             </span>
           </Link>
