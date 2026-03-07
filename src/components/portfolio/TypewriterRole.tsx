@@ -3,21 +3,28 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const ROLES = [
+  "Aspiring DevOps Engineer",
+  "I use Cachy OS with Niri wm ; it's Arch Btw",
+  "Systems Designer",
+  "Blogging what i learn everyday"
+];
+
 export default function TypewriterRole() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = [
-    "Aspiring DevOps Engineer",
-    "I use Cachy OS with Niri wm ; it's Arch Btw",
-    "Systems Designer",
-    "Blogging what i learn everyday"
-  ];
+//   const roles = [
+//     "Aspiring DevOps Engineer",
+//     "I use Cachy OS with Niri wm ; it's Arch Btw",
+//     "Systems Designer",
+//     "Blogging what i learn everyday"
+//   ];
 
   // Typewriter effect
   useEffect(() => {
-    const currentRole = roles[currentRoleIndex];
+    const currentRole = ROLES[currentRoleIndex];
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         if (displayText.length < currentRole.length) {
@@ -30,13 +37,13 @@ export default function TypewriterRole() {
           setDisplayText(displayText.slice(0, -1));
         } else {
           setIsDeleting(false);
-          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+          setCurrentRoleIndex((prev) => (prev + 1) % ROLES.length);
         }
       }
     }, isDeleting ? 50 : 120);
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentRoleIndex, roles]);
+  }, [displayText, isDeleting, currentRoleIndex]);
 
   return (
     <motion.div
