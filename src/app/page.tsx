@@ -5,7 +5,7 @@ import{
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
-
+import HeroSection from "@/components/portfolio/HeroSection";
 
 export default function Portfolio() {
   return (
