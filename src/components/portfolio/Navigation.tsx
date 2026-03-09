@@ -11,13 +11,10 @@ export default function Navigation() {
     <nav className="fixed top-0 md:top-6 w-full z-50 flex justify-center px-4 pointer-events-none">
       
       <div className="pointer-events-auto relative group">
-        {/*Ambient Glow*/}
         <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500/30 to-purple-600/30 rounded-full blur-md opacity-0 group-hover:opacity-100 transition duration-700"></div>
 
-        {/*Glass Container */}
         <div className="relative flex items-center justify-between gap-12 px-6 py-2.5 bg-white/30 dark:bg-black/20 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-2xl shadow-black/5 dark:shadow-black/20 rounded-full">
           
-          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -26,7 +23,6 @@ export default function Navigation() {
             RK
           </motion.div>
 
-          {/*Links */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <div
@@ -35,7 +31,6 @@ export default function Navigation() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Sliding Hover Pill */}
                 {hoveredIndex === index && (
                   <motion.span
                     layoutId="navHover"

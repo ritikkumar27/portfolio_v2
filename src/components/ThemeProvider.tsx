@@ -26,18 +26,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return "dark";
     });
 
-//   useEffect(() => {
-//     // Check for saved theme preference or default to dark
-//     const savedTheme = localStorage.getItem("theme") as Theme;
-//     if (savedTheme) {
-//       setTheme(savedTheme);
-//     } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-//       setTheme("light");
-//     }
-//   }, []);
-
   useEffect(() => {
-    // Update document class and save preference
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {

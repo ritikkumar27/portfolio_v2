@@ -16,14 +16,6 @@ export default function TypewriterRole() {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-//   const roles = [
-//     "Aspiring DevOps Engineer",
-//     "I use Cachy OS with Niri wm ; it's Arch Btw",
-//     "Systems Designer",
-//     "Blogging what i learn everyday"
-//   ];
-
-  // Typewriter effect
   useEffect(() => {
     const currentRole = ROLES[currentRoleIndex];
     const timeout = setTimeout(() => {
@@ -53,7 +45,6 @@ export default function TypewriterRole() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.4 }}
     >
-      {/* Floating Orbital Elements */}
       <motion.div
         className="absolute top-0 right-16 w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"
         animate={{
@@ -84,14 +75,12 @@ export default function TypewriterRole() {
         }}
       />
 
-      {/* Enhanced Role Text Container */}
       <motion.div
         className="relative overflow-hidden rounded-2xl px-6 py-3 min-w-[280px]"
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
       >
-        {/* Animated Background Layers */}
         <motion.div
           className="absolute inset-0 rounded-2xl"
           animate={{
@@ -105,7 +94,6 @@ export default function TypewriterRole() {
           transition={{ duration: 8, repeat: Infinity }}
         />
 
-        {/* Shimmer Effect */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-2xl"
           animate={{
@@ -118,7 +106,6 @@ export default function TypewriterRole() {
           }}
         />
 
-        {/* Geometric Pattern Overlay */}
         <motion.div
           className="absolute inset-0 opacity-20 rounded-2xl"
           animate={{ rotate: [0, 360] }}
@@ -130,7 +117,6 @@ export default function TypewriterRole() {
           <div className="absolute bottom-1 right-1 w-0.5 h-0.5 bg-white rounded-full" />
         </motion.div>
 
-        {/* Role Text */}
         <div className="relative z-10 text-center">
           <motion.span
             className="text-white font-semibold text-left inline-block min-w-[200px]"
@@ -152,7 +138,6 @@ export default function TypewriterRole() {
           </motion.span>
         </div>
 
-        {/* Pulse Border Effect */}
         <motion.div
           className="absolute inset-0 rounded-2xl border border-white/20"
           animate={{

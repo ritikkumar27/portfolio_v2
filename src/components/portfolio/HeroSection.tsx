@@ -8,12 +8,10 @@ import TypewriterRole from "./TypewriterRole";
 export default function HeroSection() {
   return (
     <div className="relative min-h-[100dvh] flex items-center justify-center">
-      {/* Subtle Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 dark:bg-blue-400/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/5 dark:bg-purple-400/10 rounded-full blur-3xl" />
 
-        {/* Geometric Accents */}
         <motion.div
           className="absolute top-20 right-20 w-2 h-2 bg-blue-500/30 rounded-full"
           animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.7, 0.3] }}
@@ -38,7 +36,6 @@ export default function HeroSection() {
         className="relative z-10 max-w-4xl mx-auto px-6 text-center -mb-8"
       >
 
-        {/* Name */}
         <motion.h1
           className="text-5xl md:text-6xl font-bold mb-4"
           initial={{ opacity: 0, y: 20 }}
@@ -50,10 +47,8 @@ export default function HeroSection() {
           </span>
         </motion.h1>
 
-        {/* Typewriter Role Component */}
         <TypewriterRole />
 
-        {/* Tagline */}
         <motion.p
           className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +58,6 @@ export default function HeroSection() {
           DevOps Journey in Progress
         </motion.p>
 
-        {/* Social Links - keeping exactly the same */}
         <motion.div
           className="flex flex-wrap gap-3 justify-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +81,6 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        {/* Status */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -107,7 +100,6 @@ export default function HeroSection() {
         </motion.div>
       </motion.section>
 
-      {/* Scroll for more indicator */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

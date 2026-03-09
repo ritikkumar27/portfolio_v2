@@ -1,4 +1,3 @@
-// import { PostHogProvider } from "@/components/PostHogProvider";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
@@ -26,16 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <body className={inter.className}>
-        {/* <PostHogProvider> */}
-          {/* <ThemeProvider> */}
-            {/* <AnimatedBackground /> */}
-            {/* {children} */}
-          {/* </ThemeProvider> */}
-        {/* </PostHogProvider> */}
-
-
         <ThemeProvider>
-            {/* <AnimatedBackground /> */}
             {children}
           </ThemeProvider>
       </body>

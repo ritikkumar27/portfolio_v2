@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 
-// Define a type for our particle data
 type Particle = {
   id: number;
   left: string;
@@ -15,7 +14,6 @@ type Particle = {
 
 export default function Background() {
   const [isMobile, setIsMobile] = useState(false);
-  // Store particles in state to avoid hydration mismatch
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
@@ -23,7 +21,6 @@ export default function Background() {
       const mobileStatus = window.innerWidth < 768 || 'ontouchstart' in window;
       setIsMobile(mobileStatus);
       
-      // Generate particles only on the client
       const count = mobileStatus ? 5 : 12;
       const newParticles = Array.from({ length: count }).map((_, i) => ({
         id: i,
@@ -48,7 +45,6 @@ export default function Background() {
     <div className="fixed inset-0 -z-10 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-black" />
 
-      {/* Animated gradient orbs */}
       <motion.div
         className={`absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 dark:from-blue-500/30 dark:to-purple-600/30 rounded-full -z-10 ${isMobile ? 'blur-xl' : 'blur-3xl'}`}
         animate={isMobile ? { x: [0, 50, 0], y: [0, -25, 0] } : { x: [0, 100, 0], y: [0, -50, 0], scale: [1, 1.2, 1] }}
@@ -77,7 +73,6 @@ export default function Background() {
         />
       )}
 
-      {/* Floating particles - rendering from state */}
       {particles.map((p) => (
         <motion.div
           key={p.id}

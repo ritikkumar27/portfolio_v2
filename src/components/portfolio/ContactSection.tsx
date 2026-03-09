@@ -55,7 +55,6 @@ export default function ContactSection() {
       </motion.div>
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-5 gap-12 items-start">
-        {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -100,7 +99,6 @@ export default function ContactSection() {
           </div>
         </motion.div>
 
-        {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
