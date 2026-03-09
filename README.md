@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ritik Kumar - DevOps Engineer Portfolio
 
-## Getting Started
+Welcome to the central repository for my personal portfolio! This project showcases my skills, experience, and passion as a DevOps Engineer specializing in modern Web Architecture, Networking, and System Design.
 
-First, run the development server:
+## 🚀 Live Preview
+*(Add your live URL here once deployed, e.g., https://ritikkumar.dev)*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🛠️ Tech Stack
+
+This project is built using modern web technologies to ensure performance, accessibility, and stellar animations:
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router, v16)
+- **Library**: [React](https://react.dev/) (v19)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) & [OGL](https://github.com/oframe/ogl) (for 3D webGL backgrounds)
+- **Analytics**: [PostHog](https://posthog.com/)
+- **Contact Forms**: [EmailJS](https://www.emailjs.com/)
+
+---
+
+## 📂 Project Structure
+
+The project has a clean and modular structure focusing on reusability and scalability:
+
+```text
+src/
+├── app/                  # Next.js App Router layout and pages
+│   ├── globals.css       # Global styles and Tailwind directives
+│   ├── layout.tsx        # Root layout with Providers (Theme, Analytics)
+│   └── page.tsx          # Main Portfolio Landing Page
+│
+├── components/           # Reusable UI components
+│   ├── portfolio/        # Section-specific components
+│   │   ├── HeroSection.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── Background.tsx
+│   │   └── TypewriterRole.tsx
+│   │
+│   ├── ui/               # Generic/Shared UI elements
+│   │   └── 3d-card.tsx
+│   │
+│   ├── PostHogProvider.tsx
+│   ├── ThemeProvider.tsx
+│   └── ThemeToggle.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To get a local copy up and running, follow these simple steps:
 
-## Learn More
+### Prerequisites
+Make sure you have Node.js and npm (or your preferred package manager) installed.
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ritikkumar27/portfolio_v2.git
+   cd portfolio_v2
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-## Deploy on Vercel
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **View in the browser:**
+   Open [http://localhost:3000](http://localhost:3000) to see the result. The page will auto-update as you edit files.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🎨 Design & Features
+
+- **Dynamic Backgrounds & 3D Elements:** Engaging interactive backgrounds using WebGL/OGL and `framer-motion`.
+- **Responsive Layout:** fully functional and visually appealing on all device sizes.
+- **Dark/Light Mode:** Seamless theme toggling to accommodate user preferences.
+- **Typewriter Effects:** Smooth, performant text animations in the Hero section.
+- **Embedded Analytics:** Configured with PostHog provider for tracking user engagement.
+
+---
+
+## 📝 License
+
+This project is for personal use and showcasing work. Any third-party libraries used are under their respective licenses.
+
+---
+*Built with ❤️ by Ritik Kumar.*
