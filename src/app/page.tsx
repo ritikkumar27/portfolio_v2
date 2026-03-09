@@ -1,7 +1,8 @@
 "use client";
 
 import{
-  Background
+  Background,
+  OverviewSection
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -20,6 +21,8 @@ export default function Portfolio() {
         {/* Hero Section */}
         <HeroSection />
 
+        {/* Overview Section */}
+        <OverviewSection />
       </div>
 
 

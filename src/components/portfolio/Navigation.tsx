@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const navItems = ["Overview", "Stack", "Projects", "Testimonials", "Contact"];
+const navItems = ["Overview","Blog", "Contact"];
 
 export default function Navigation() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
