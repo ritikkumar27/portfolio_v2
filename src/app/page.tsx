@@ -2,7 +2,8 @@
 
 import{
   Background,
-  OverviewSection
+  OverviewSection,
+  ContactSection
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -23,6 +24,9 @@ export default function Portfolio() {
 
         {/* Overview Section */}
         <OverviewSection />
+        
+        {/* Contact Section */}
+        <ContactSection />
       </div>
 
 
