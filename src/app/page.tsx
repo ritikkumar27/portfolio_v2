@@ -3,7 +3,8 @@
 import{
   Background,
   OverviewSection,
-  ContactSection
+  ContactSection,
+  MusicSection
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -20,6 +21,8 @@ export default function Portfolio() {
         <HeroSection />
 
         <OverviewSection />
+
+        <MusicSection />
         
         <ContactSection />
       </div>
