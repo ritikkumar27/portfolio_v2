@@ -56,6 +56,10 @@ export default function MusicSection() {
     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
     audio.addEventListener("ended", handleEnded);
 
+    if (audio.readyState >= 1) {
+      setDuration(audio.duration);
+    }
+
     return () => {
       audio.removeEventListener("timeupdate", updateProgress);
       audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
@@ -78,18 +82,28 @@ export default function MusicSection() {
   const togglePlay = () => setIsPlaying(!isPlaying);
 
   const handleNext = () => {
-    setCurrentSongIndex((prev) => (prev + 1) % playlist.length);
+    if (playlist.length === 1 && audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {});
+    } else {
+      setCurrentSongIndex((prev) => (prev + 1) % playlist.length);
+    }
     setIsPlaying(true);
   };
 
   const handlePrev = () => {
-    setCurrentSongIndex((prev) => (prev - 1 + playlist.length) % playlist.length);
+    if (playlist.length === 1 && audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {});
+    } else {
+      setCurrentSongIndex((prev) => (prev - 1 + playlist.length) % playlist.length);
+    }
     setIsPlaying(true);
   };
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (audioRef.current) {
-      const newTime = (Number(e.target.value) / 100) * duration;
+    if (audioRef.current && audioRef.current.duration) {
+      const newTime = (Number(e.target.value) / 100) * audioRef.current.duration;
       audioRef.current.currentTime = newTime;
       setProgress(Number(e.target.value));
     }
@@ -227,6 +241,7 @@ export default function MusicSection() {
         ref={audioRef} 
         src={currentSong.audioUrl} 
         preload="auto"
+        loop={playlist.length === 1}
       />
       
       {/* Required for the slow spinning vinyl effect */}
