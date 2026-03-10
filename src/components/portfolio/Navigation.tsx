@@ -15,13 +15,22 @@ export default function Navigation() {
 
         <div className="relative flex items-center justify-between gap-12 px-6 py-2.5 bg-white/30 dark:bg-black/20 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-2xl shadow-black/5 dark:shadow-black/20 rounded-full">
           
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent drop-shadow-sm"
           >
             RK
-          </motion.div>
+          </motion.div> */}
+
+          <motion.a
+            href="#hero"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent drop-shadow-sm cursor-pointer"
+            >
+            RK
+          </motion.a>
 
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => (

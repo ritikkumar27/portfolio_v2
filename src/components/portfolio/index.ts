@@ -5,3 +5,5 @@ export { default as TypewriterRole } from './TypewriterRole';
 export { default as OverviewSection } from './OverviewSection';
 export { default as ContactSection } from './ContactSection';
 export { default as MusicSection } from './MusicSection';
+export { default as Blog } from './Blog';
+

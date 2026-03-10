@@ -90,10 +90,4 @@ Make sure you have Node.js and npm installed.
 
 ---
 
-## 📝 License
-
-This project is for personal use and showcasing work. Any third-party libraries used are under their respective licenses.
-
----
-
 _Built with ❤️ by Ritik Kumar._

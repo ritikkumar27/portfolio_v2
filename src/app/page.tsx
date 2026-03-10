@@ -4,7 +4,8 @@ import{
   Background,
   OverviewSection,
   ContactSection,
-  MusicSection
+  MusicSection,
+  Blog
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -18,9 +19,12 @@ export default function Portfolio() {
       <Navigation/>
 
       <div className="max-w-6xl mx-auto px-6 pt-24">
-        <HeroSection />
 
+        <HeroSection />
+        
         <OverviewSection />
+
+        <Blog />
 
         <MusicSection />
         
