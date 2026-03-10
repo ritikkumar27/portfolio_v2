@@ -2,9 +2,9 @@
 
 Welcome to my personal portfolio! This project showcases my skills, experience, and passion as a DevOps Engineer specializing in modern Web Architecture, Networking, and System Design.
 
-## 🚀 Live Preview
+<!-- ## 🚀 Live Preview
 
-_(Add your live URL here once deployed, e.g., https://ritikkumar.dev)_
+_(Add your live URL here once deployed, e.g., https://ritikkumar.dev)_ -->
 
 ---
 
@@ -16,6 +16,9 @@ This project is built using modern web technologies :
 - **Library**: [React]
 - **Styling**: [Tailwind CSS]
 - **Animations**: [Framer Motion] & [OGL](for 3D webGL backgrounds)
+- **Icons**: [Lucide React] (used in custom Music Player & UI)
+- **Email Service**: [EmailJS] (for direct contact form delivery)
+- **Audio**: HTML5 `<audio>` API (for background music playback)
 
 ---
 
@@ -32,9 +35,13 @@ src/
 │
 ├── components/           # Reusable UI components
 │   ├── portfolio/        # Section-specific components
-│   │   ├── HeroSection.tsx
-│   │   ├── Navigation.tsx
 │   │   ├── Background.tsx
+│   │   ├── Blog.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── MusicSection.tsx
+│   │   ├── Navigation.tsx
+│   │   ├── OverviewSection.tsx
 │   │   └── TypewriterRole.tsx
 │   │
 │   ├── ui/               # Generic/Shared UI elements
@@ -87,6 +94,9 @@ Make sure you have Node.js and npm installed.
 - **Responsive Layout:** fully functional and visually appealing on all device sizes.
 - **Dark/Light Mode:** Seamless theme toggling to accommodate user preferences.
 - **Typewriter Effects:** Smooth, performant text animations in the Hero section.
+- **Interactive Music Player:** A sleek, minimal music widget with play/pause, seek functionality, and continuous playback.
+- **Contact Form Delivery:** Integrated email service with EJS templating for direct mail functionality.
+- **Expandable Content:** Includes Overview and upcoming Blog sections for detailed insights and updates.
 
 ---
 
