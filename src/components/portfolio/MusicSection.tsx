@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, SkipBack, SkipForward, ListMusic } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, ListMusic, ChevronDown, ChevronUp } from "lucide-react";
 
 // Playlist using local public assets
 const playlist = [
@@ -29,7 +29,17 @@ export default function MusicSection() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   
+  // Conditionally collapse on mobile load
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 768) {
+        setIsMinimized(true);
+      }
+    }
+  }, []);
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const currentSong = playlist[currentSongIndex];
 
@@ -115,10 +125,41 @@ export default function MusicSection() {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 md:left-8 md:bottom-8 z-40 w-[calc(100%-3rem)] md:w-80 bg-white/5 dark:bg-black/20 backdrop-blur-md border border-gray-200/30 dark:border-white/10 shadow-xl rounded-2xl overflow-hidden transition-all duration-300">
+    <div className={`fixed bottom-6 left-6 md:left-8 md:bottom-8 z-40 transition-all duration-300 ${
+      isMinimized 
+        ? "w-14 h-14 md:w-16 md:h-16 rounded-full cursor-pointer hover:scale-105 active:scale-95 flex items-center justify-center bg-white/10 dark:bg-black/30 backdrop-blur-xl border border-gray-200/40 dark:border-white/20 shadow-2xl" 
+        : "w-[calc(100%-3rem)] md:w-80 bg-white/5 dark:bg-black/20 backdrop-blur-md border border-gray-200/30 dark:border-white/10 shadow-xl rounded-2xl overflow-hidden"
+    }`}>
       
-      {/* Main Player Area */}
-      <div className="p-4">
+      {isMinimized ? (
+        <div 
+          onClick={() => setIsMinimized(false)}
+          className="w-full h-full relative flex items-center justify-center group"
+          title="Expand Music Player"
+        >
+          {/* Spinning Cover */}
+          <div className={`absolute inset-0 rounded-full overflow-hidden transition-all duration-500 border-2 border-gray-200/20 dark:border-indigo-500/30 ${isPlaying ? 'spin-slow' : ''}`}>
+             <img src={currentSong.coverImage} className="w-full h-full object-cover" alt="Vinyl Cover" />
+             <div className="absolute inset-0 m-auto w-3 h-3 bg-white/20 dark:bg-black/40 backdrop-blur-sm rounded-full border border-gray-300/30 dark:border-white/20"></div>
+          </div>
+          {/* View Icon Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-[2px]">
+            <ChevronUp size={24} className="text-white" />
+          </div>
+        </div>
+      ) : (
+        <>
+          {/* Main Player Area */}
+          <div className="p-4 relative">
+            
+            {/* Context menu for minimize */}
+            <button
+              onClick={() => setIsMinimized(true)}
+              className="absolute top-3 right-3 p-1.5 md:flex md:top-2 md:right-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors bg-black/5 dark:bg-white/10 rounded-full z-10"
+              aria-label="Minimize Player"
+            >
+              <ChevronDown size={14} />
+            </button>
         {/* Track Info & Play Button */}
         <div className="flex items-center gap-4">
           {/* Constantly spinning cover if playing */}
@@ -235,6 +276,8 @@ export default function MusicSection() {
           })}
         </div>
       </div>
+      </>
+      )}
       
       {/* Hidden Audio Element */}
       <audio 
