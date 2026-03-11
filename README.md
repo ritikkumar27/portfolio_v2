@@ -123,4 +123,4 @@ Make sure you have Node.js and npm installed.
 
 ---
 
-_Built with ❤️ by Ritik Kumar._
+_Built with ❤️ by duckworth._
