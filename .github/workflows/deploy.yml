@@ -73,11 +73,11 @@ jobs:
               environment:
                 - NODE_ENV=production
               networks:
-                - portfolio_network
+                - proxy
 
           networks:
-            portfolio_network:
-              driver: bridge
+            proxy:
+              external: true
           EOF
 
       - name: Login to GitHub Container Registry
