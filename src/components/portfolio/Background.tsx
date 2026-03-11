@@ -47,21 +47,21 @@ export default function Background() {
 
       <motion.div
         className={`absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 dark:from-blue-500/30 dark:to-purple-600/30 rounded-full -z-10 ${isMobile ? 'blur-xl' : 'blur-3xl'}`}
-        animate={isMobile ? { x: [0, 50, 0], y: [0, -25, 0] } : { x: [0, 100, 0], y: [0, -50, 0], scale: [1, 1.2, 1] }}
-        transition={{ ...animationConfig, repeat: Infinity, repeatType: "reverse" }}
-        style={{ willChange: 'transform' }}
+        animate={isMobile ? undefined : { x: [0, 100, 0], y: [0, -50, 0], scale: [1, 1.2, 1] }}
+        transition={isMobile ? undefined : { ...animationConfig, repeat: Infinity, repeatType: "reverse" }}
+        style={isMobile ? undefined : { willChange: 'transform' }}
       />
 
       <motion.div
         className={`absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-300/15 to-blue-400/15 dark:from-cyan-400/25 dark:to-blue-500/25 rounded-full ${isMobile ? 'blur-lg' : 'blur-3xl'}`}
-        animate={isMobile ? { x: [0, -40, 0], y: [0, 30, 0] } : { x: [0, -80, 0], y: [0, 60, 0], scale: [1, 0.8, 1] }}
-        transition={{
+        animate={isMobile ? undefined : { x: [0, -80, 0], y: [0, 60, 0], scale: [1, 0.8, 1] }}
+        transition={isMobile ? undefined : {
           duration: animationConfig.duration + 2,
           repeat: Infinity,
           repeatType: "reverse",
           ease: animationConfig.ease,
         }}
-        style={{ willChange: 'transform' }}
+        style={isMobile ? undefined : { willChange: 'transform' }}
       />
 
       {!isMobile && (
@@ -80,7 +80,7 @@ export default function Background() {
           style={{
             left: p.left,
             top: p.top,
-            willChange: 'transform, opacity',
+            ...(isMobile ? {} : { willChange: 'transform, opacity' }),
           }}
           animate={{
             y: [0, isMobile ? -50 : -100],
