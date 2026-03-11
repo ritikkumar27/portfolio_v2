@@ -150,15 +150,15 @@ export default function MusicSection() {
       ) : (
         <>
           {/* Main Player Area */}
-          <div className="p-4 relative">
+          <div className="px-4 pb-4 pt-8 relative">
             
             {/* Context menu for minimize */}
             <button
               onClick={() => setIsMinimized(true)}
-              className="absolute top-3 right-3 p-1.5 md:flex md:top-2 md:right-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors bg-black/5 dark:bg-white/10 rounded-full z-10"
+              className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors bg-black/5 dark:bg-white/10 rounded-full z-10"
               aria-label="Minimize Player"
             >
-              <ChevronDown size={14} />
+              <ChevronDown size={16} />
             </button>
         {/* Track Info & Play Button */}
         <div className="flex items-center gap-4">
@@ -169,8 +169,7 @@ export default function MusicSection() {
               alt={`${currentSong.title} Cover`}
               className="w-full h-full object-cover rounded-full"
             />
-            {/* Center hole to make it look like a vinyl record */}
-            <div className="absolute inset-0 m-auto w-3 h-3 bg-white/20 dark:bg-black/40 backdrop-blur-sm rounded-full border border-gray-300/30 dark:border-white/20"></div>
+            {/* <div className="absolute inset-0 m-auto w-3 h-3 bg-white/20 dark:bg-black/40 backdrop-blur-sm rounded-full border border-gray-300/30 dark:border-white/20"></div> */}
           </div>
 
           <div className="flex-1 min-w-0">
