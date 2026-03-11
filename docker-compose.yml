@@ -1,3 +1,22 @@
+# version: '3.8'
+
+# services:
+#   portfolio-app:
+#     image: ghcr.io/ritikkumar27/portfolio_v2:latest
+#     container_name: portfolio-app
+#     restart: unless-stopped
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - NODE_ENV=production
+#     networks:
+#       - portfolio_network
+
+# networks:
+#   portfolio_network:
+#     driver: bridge
+
+
 version: '3.8'
 
 services:
@@ -10,8 +29,8 @@ services:
     environment:
       - NODE_ENV=production
     networks:
-      - portfolio_network
+      - proxy
 
 networks:
-  portfolio_network:
-    driver: bridge
+  proxy:
+    external: true
