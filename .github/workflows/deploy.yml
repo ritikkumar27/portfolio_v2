@@ -1,0 +1,93 @@
+name: Deploy Portfolio to Home Server
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha
+            type=raw,value=latest
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            NEXT_TELEMETRY_DISABLED=1
+            NEXT_PUBLIC_EMAILJS_SERVICE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+            NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+            NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
+
+  deploy-to-homeserver:
+    needs: build-and-push-image
+    # This runs directly on your home server!
+    runs-on: self-hosted
+
+    steps:
+      - name: Ensure app directory exists
+        run: mkdir -p $HOME/portfolio
+
+      - name: Create docker-compose.yml
+        run: |
+          cat << 'EOF' > $HOME/portfolio/docker-compose.yml
+          version: '3.8'
+
+          services:
+            portfolio-app:
+              image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+              container_name: portfolio-app
+              restart: unless-stopped
+              ports:
+                - "3000:3000"
+              environment:
+                - NODE_ENV=production
+              networks:
+                - portfolio_network
+
+          networks:
+            portfolio_network:
+              driver: bridge
+          EOF
+
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.GHCR_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Pull and Restart Docker Container
+        run: |
+          cd $HOME/portfolio
+          docker compose pull portfolio-app
+          docker compose up -d
+
+      - name: Cleanup old images
+        run: docker image prune -af
