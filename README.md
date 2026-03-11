@@ -4,7 +4,7 @@ Welcome to my personal portfolio! This project showcases my skills, experience, 
 
 ## 🚀 Live Preview
 
-_(https://ritikkumar.dev)_
+_https://ritikkumar.dev_
 
 ---
 
@@ -22,22 +22,22 @@ _(https://ritikkumar.dev)_
 
 This project is built using modern web technologies :
 
-- **Framework**: [Next.js]
-- **Library**: [React]
-- **Styling**: [Tailwind CSS]
-- **Animations**: [Framer Motion] & [OGL](for 3D webGL backgrounds)
-- **Icons**: [Lucide React] (used in custom Music Player & UI)
-- **Email Service**: [EmailJS] (for direct contact form delivery)
+- **Framework**: Next.js
+- **Library**: React
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion & OGL(for 3D webGL backgrounds)
+- **Icons**: Lucide React (used in custom Music Player & UI)
+- **Email Service**: EmailJS (for direct contact form delivery)
 - **Audio**: HTML5 `<audio>` API (for background music playback)
-- **Containerization**: [Docker] & [Docker Compose]
-- **CI/CD**: [GitHub Actions]
-- **Routing & Exposure**: [Cloudflare Tunnel]
+- **Containerization**: Docker & Docker Compose
+- **CI/CD**: GitHub Actions
+- **Routing & Exposure**: Cloudflare Tunnel
 
 ---
 
 ## 📂 Project Structure
 
-The project has a clean and modular structure focusing on reusability and scalability:
+The project has a clean structure
 
 ```text
 .
