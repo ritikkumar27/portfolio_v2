@@ -28,7 +28,6 @@ export default function GuestbookForm() {
         setSubmitStatus("success");
         setName("");
         setMessage("");
-        // trigger list refresh
         window.dispatchEvent(new Event('guestbook_update'));
       } else {
         setSubmitStatus("error");

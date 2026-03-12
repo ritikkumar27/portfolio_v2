@@ -19,7 +19,6 @@ export async function POST(req: Request) {
       );
     }
 
-    // Ensure strings are reasonable length
     const cleanName = String(name).slice(0, 50);
     const cleanMessage = String(message).slice(0, 250);
 
@@ -30,7 +29,6 @@ export async function POST(req: Request) {
       createdAt: Date.now(),
     };
 
-    // Store in a Redis List (lpush adds to the start)
     await redis.lpush("guestbook_messages", JSON.stringify(entry));
 
     return NextResponse.json(entry, { status: 201 });
@@ -45,7 +43,6 @@ export async function POST(req: Request) {
 
 export async function GET() {
   try {
-    // Fetch the last 50 messages from the Redis List (0 to 49)
     const messages = await redis.lrange("guestbook_messages", 0, 49);
 
     return NextResponse.json(messages, { status: 200 });

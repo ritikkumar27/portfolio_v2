@@ -7,7 +7,7 @@ import GuestbookList from "./GuestbookList";
 export default function GuestbookSection() {
   return (
     <section id="guestbook" className="py-24 relative overflow-hidden">
-      {/* Decorative blurred blobs */}
+      {/*blurred blobs */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-pink-500/5 dark:bg-pink-500/10 rounded-full blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl -z-10 pointer-events-none" />
 
