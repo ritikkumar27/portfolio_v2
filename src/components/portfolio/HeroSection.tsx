@@ -67,7 +67,8 @@ export default function HeroSection() {
           {[
             { href: "https://github.com/ritikkumar27", icon: "simple-icons:github", label: "GitHub", color: "hover:text-gray-900 dark:hover:text-white" },
             { href: "https://www.linkedin.com/in/ritik-kumar-4a0231246", icon: "skill-icons:linkedin", label: "LinkedIn", color: "hover:text-blue-600" },
-            { href: "https://www.instagram.com/duck.devlog/", icon: "skill-icons:instagram", label: "Instagram", color: "hover:text-green-600" }
+            { href: "https://www.instagram.com/duck.devlog/", icon: "skill-icons:instagram", label: "Instagram", color: "hover:text-green-600" },
+            { href: "https://www.reddit.com/user/duckworth108/", icon: "logos:reddit-icon", label: "Reddit", color: "hover:text-green-600" }
           ].map((link) => (
             <motion.div key={link.label} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
