@@ -119,7 +119,7 @@ export default function ContactSection() {
                   name="user_name"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow text-gray-900 dark:text-white"
-                  placeholder="John Doe"
+                  placeholder="🫥"
                 />
               </div>
               <div className="space-y-2">
@@ -130,7 +130,7 @@ export default function ContactSection() {
                   name="user_email"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow text-gray-900 dark:text-white"
-                  placeholder="john@example.com"
+                  placeholder="📧"
                 />
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
                 required
                 rows={5}
                 className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow text-gray-900 dark:text-white resize-y"
-                placeholder="How can I help you?"
+                placeholder="Relay your idea through SMTP 💡❕"
               />
             </div>
 

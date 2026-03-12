@@ -56,7 +56,7 @@ export default function GuestbookForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full px-4 py-2 bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all font-sans"
-            placeholder="John Doe"
+            placeholder="Name"
             required
             maxLength={50}
           />
@@ -68,7 +68,7 @@ export default function GuestbookForm() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="w-full px-4 py-2 bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all resize-none h-24 font-sans"
-            placeholder="Your message here..."
+            placeholder="Drop a message or feedback for me 💬"
             required
             maxLength={250}
           />
