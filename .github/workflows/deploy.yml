@@ -74,6 +74,8 @@ jobs:
                 - "3000:3000"
               environment:
                 - NODE_ENV=production
+                - UPSTASH_REDIS_REST_URL=${{ secrets.UPSTASH_REDIS_REST_URL }}
+                - UPSTASH_REDIS_REST_TOKEN=${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
               networks:
                 - proxy
 
