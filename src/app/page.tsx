@@ -6,7 +6,8 @@ import{
   ContactSection,
   MusicSection,
   Blog,
-  GuestbookSection
+  GuestbookSection,
+  ProjectsSection
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -24,6 +25,8 @@ export default function Portfolio() {
         <HeroSection />
         
         <OverviewSection />
+
+        <ProjectsSection />
 
         <Blog />
 
