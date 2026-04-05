@@ -37,7 +37,7 @@ export const projects: Project[] = [
     tags: ["NestJS", "Drizzle ORM", "PostgreSQL", "Handlebars", "TypeScript"],
     category: "Web App",
     categoryColor: "indigo",
-    github: "https://github.com/ritikkumar27/blog",
+    github: "https://github.com/ritikkumar27/blog_v2",
     live: "https://blog.ritikkumar.dev",
   },
   {
