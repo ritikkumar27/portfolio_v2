@@ -14,13 +14,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "portfolio-v2",
+    id: "portfolio",
     number: "01",
-    title: "Portfolio v2",
+    title: "Portfolio",
     description:
       "This site — a personal portfolio built with Next.js 14, Tailwind CSS, and Framer Motion. Fully self-hosted via Cloudflare Tunnels on a home server with zero cold starts.",
     longDescription:
-      "Designed from scratch with a focus on micro-interactions and performance. Features a dark/light mode toggle, a floating Nujabes music player, a guestbook backed by a Postgres database, and smooth scroll-triggered animations throughout.",
+      "Designed from scratch with a focus on micro-interactions and performance. A floating Nujabes music player, a guestbook backed by a Postgres database, and smooth scroll-triggered animations throughout.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Cloudflare", "Docker"],
     category: "Web App",
     categoryColor: "blue",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     number: "04",
     title: "Local AI Node",
     description:
-      "A fully offline AI stack running on the home server. Ollama serves local LLMs, exposed through Open WebUI — no external API calls, no telemetry, full control.",
+      "A fully offline AI stack running on my workstation. Ollama serves local LLMs, exposed through Open WebUI — no external API calls, no telemetry, full control.",
     tags: ["Ollama", "Open WebUI", "Docker", "Linux", "LLMs"],
     category: "Local AI",
     categoryColor: "purple",
