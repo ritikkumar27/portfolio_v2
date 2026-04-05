@@ -63,6 +63,7 @@ type TooltipState = {
   text: string;
   x: number;
   y: number;
+  above: boolean;
 };
 
 
@@ -95,6 +96,7 @@ export default function GitHubGraph() {
     text: "",
     x: 0,
     y: 0,
+    above: true,
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -121,7 +123,9 @@ export default function GitHubGraph() {
       count === 0
         ? `No contributions on ${formatDate(day.date)}`
         : `${count} contribution${count > 1 ? "s" : ""} on ${formatDate(day.date)}`;
-    setTooltip({ visible: true, text: label, x, y });
+    // flip below the cell when too close to the top
+    const above = y > 50;
+    setTooltip({ visible: true, text: label, x, y, above });
   }
 
   function handleCellLeave() {
@@ -198,7 +202,7 @@ export default function GitHubGraph() {
                 className="pointer-events-none absolute z-50 px-3 py-1.5 text-xs font-medium rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 whitespace-nowrap"
                 style={{
                   left: tooltip.x,
-                  top: tooltip.y - 40,
+                  top: tooltip.above ? tooltip.y - 40 : tooltip.y + 18,
                   transform: "translateX(-50%)",
                 }}
               >
