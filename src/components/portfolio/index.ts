@@ -8,4 +8,5 @@ export { default as MusicSection } from './MusicSection';
 export { default as Blog } from './Blog';
 export { default as GuestbookSection } from './GuestbookSection';
 export { default as ProjectsSection } from './ProjectsSection';
+export { default as GitHubGraph } from './GitHubGraph';
 

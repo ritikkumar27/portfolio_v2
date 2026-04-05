@@ -7,7 +7,8 @@ import{
   MusicSection,
   Blog,
   GuestbookSection,
-  ProjectsSection
+  ProjectsSection,
+  GitHubGraph
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -27,6 +28,8 @@ export default function Portfolio() {
         <OverviewSection />
 
         <ProjectsSection />
+
+        <GitHubGraph />
 
         <Blog />
 
