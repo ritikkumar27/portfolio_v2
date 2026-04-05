@@ -144,7 +144,7 @@ export default function GitHubGraph() {
           GitHub Activity
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto leading-relaxed">
-          A year of commits, pushes, and late-night sessions.
+          Every commit, push, and PR across 2026.
         </p>
       </motion.div>
 
@@ -174,7 +174,7 @@ export default function GitHubGraph() {
             >
               <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
               <span className="text-sm font-semibold text-green-700 dark:text-green-300">
-                {data.total.toLocaleString()} contributions in the last year
+                {data.total.toLocaleString()} contributions in 2026
               </span>
             </motion.div>
           )}
