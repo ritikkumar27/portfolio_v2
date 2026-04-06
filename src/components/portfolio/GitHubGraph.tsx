@@ -96,7 +96,7 @@ export default function GitHubGraph() {
     text: "",
     x: 0,
     y: 0,
-    above: true,
+    above: true, 
   });
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -123,7 +123,6 @@ export default function GitHubGraph() {
       count === 0
         ? `No contributions on ${formatDate(day.date)}`
         : `${count} contribution${count > 1 ? "s" : ""} on ${formatDate(day.date)}`;
-    // flip below the cell when too close to the top
     const above = y > 50;
     setTooltip({ visible: true, text: label, x, y, above });
   }
