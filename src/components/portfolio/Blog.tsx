@@ -17,7 +17,7 @@ export default function Blog() {
           Blog Section
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          This is under construction right now and i am working on it.
+          <a href="https://blog.ritikkumar.dev">Click here 🗊 to read my Blogs.</a>
         </p>
       </motion.div>
     </section>
