@@ -5,136 +5,57 @@ module.exports = {
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
-	darkMode: "class",
 	theme: {
 		extend: {
 			colors: {
-				border: "hsl(var(--border))",
-				input: "hsl(var(--input))",
-				ring: "hsl(var(--ring))",
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
-				primary: {
-					DEFAULT: "hsl(var(--primary))",
-					foreground: "hsl(var(--primary-foreground))",
-				},
-				secondary: {
-					DEFAULT: "hsl(var(--secondary))",
-					foreground: "hsl(var(--secondary-foreground))",
-				},
-				destructive: {
-					DEFAULT: "hsl(var(--destructive))",
-					foreground: "hsl(var(--destructive-foreground))",
-				},
-				muted: {
-					DEFAULT: "hsl(var(--muted))",
-					foreground: "hsl(var(--muted-foreground))",
-				},
-				accent: {
-					DEFAULT: "hsl(var(--accent))",
-					foreground: "hsl(var(--accent-foreground))",
-				},
-				popover: {
-					DEFAULT: "hsl(var(--popover))",
-					foreground: "hsl(var(--popover-foreground))",
-				},
-				card: {
-					DEFAULT: "hsl(var(--card))",
-					foreground: "hsl(var(--card-foreground))",
+				cosmic: {
+					bg: {
+						deep: "#0c0513",
+						start: "rgb(27,20,41)",
+						end: "rgb(20,15,35)",
+						surface: "rgba(27,26,46,0.663)",
+						footer: "rgb(10,4,22)",
+						"mobile-nav": "#181a27",
+					},
+					accent: {
+						100: "#c084f5",
+						200: "#c770f0",
+						300: "#cd5ff8",
+						400: "#be6adf",
+						500: "#c95bf5",
+						600: "#b562d6",
+						700: "#be50f4",
+						800: "#8a49a8",
+						900: "#68187a",
+						950: "#700c86",
+					},
+					btn: {
+						primary: "#623686",
+						"primary-hover": "rgba(109,32,197,0.843)",
+						ghost: "rgba(147,76,206,0.369)",
+						"ghost-hover": "rgba(162,77,211,0.525)",
+					},
+					text: {
+						primary: "#ffffff",
+						body: "whitesmoke",
+						muted: "#a588c0",
+						quote: "rgb(155,126,172)",
+					},
 				},
 			},
 			fontFamily: {
-				sans: ["Inter", "sans-serif"],
+				mono: ['"PT Mono"', "monospace"],
+			},
+			boxShadow: {
+				card: "0 4px 5px 3px rgba(119,53,136,0.459)",
+				"card-hover": "0 4px 4px 5px rgba(129,72,144,0.561)",
+				chip: "4px 5px 4px 3px rgba(89,4,168,0.137)",
+				nav: "0px 10px 10px 0px rgba(9,5,29,0.171)",
+				glow: "0 0 15px #801f95",
+				"icon-hover": "0 0 5px #87209e",
 			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-			},
-			animation: {
-				"pulse-glow": "pulse-glow 2s ease-in-out infinite",
-				float: "float 3s ease-in-out infinite",
-				"gradient-shift": "gradient-shift 15s ease infinite",
-				typing:
-					"typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite",
-				"particle-float": "particle-float 4s linear infinite",
-				glitch: "glitch 1s, blur 0.2s ease-out",
-			},
-			keyframes: {
-				"pulse-glow": {
-					"0%, 100%": {
-						opacity: "1",
-						boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)",
-					},
-					"50%": {
-						opacity: "0.8",
-						boxShadow:
-							"0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6)",
-					},
-				},
-				float: {
-					"0%, 100%": { transform: "translateY(0px)" },
-					"50%": { transform: "translateY(-10px)" },
-				},
-				"gradient-shift": {
-					"0%, 100%": { backgroundPosition: "0% 50%" },
-					"50%": { backgroundPosition: "100% 50%" },
-				},
-				typing: {
-					from: { width: "0" },
-					to: { width: "100%" },
-				},
-				"blink-caret": {
-					"from, to": { borderColor: "transparent" },
-					"50%": { borderColor: "#3b82f6" },
-				},
-				"particle-float": {
-					"0%": {
-						transform: "translateY(0px) rotate(0deg)",
-						opacity: "1",
-					},
-					"100%": {
-						transform: "translateY(-100px) rotate(360deg)",
-						opacity: "0",
-					},
-				},
-				glitch: {
-					"0%": {
-						textShadow:
-							"0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00",
-					},
-					"15%": {
-						textShadow:
-							"0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00",
-					},
-					"16%": {
-						textShadow:
-							"-0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff, -0.05em -0.05em 0 #fffc00",
-					},
-					"49%": {
-						textShadow:
-							"-0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff, -0.05em -0.05em 0 #fffc00",
-					},
-					"50%": {
-						textShadow:
-							"0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff, 0 -0.04em 0 #fffc00",
-					},
-					"99%": {
-						textShadow:
-							"0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff, 0 -0.04em 0 #fffc00",
-					},
-					"100%": {
-						textShadow:
-							"-0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff, -0.04em -0.025em 0 #fffc00",
-					},
-				},
-			},
-			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-				"grid-white":
-					"linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
-				"grid-black":
-					"linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px)",
 			},
 		},
 	},

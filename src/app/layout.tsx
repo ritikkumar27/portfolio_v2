@@ -1,9 +1,8 @@
-import { ThemeProvider } from "@/components/ThemeProvider";
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { PT_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"] });
+const ptMono = PT_Mono({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Ritik Kumar - Aspiring DevOps Engineer",
@@ -24,10 +23,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={inter.className}>
-        <ThemeProvider>
-            {children}
-          </ThemeProvider>
+      <body className={ptMono.className}>
+        {children}
       </body>
     </html>
   );

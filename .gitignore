@@ -43,3 +43,6 @@ next-env.d.ts
 
 repomix-output.xml
 /backups
+npm-cache
+portfolio_design_spec.md
+ui_analysis_current_project.md
