@@ -31,7 +31,7 @@ export default function Portfolio() {
           <GitHubGraph />
           <Blog />
           <GuestbookSection />
-          <MusicSection />
+          {/* <MusicSection /> */}
           <ContactSection />
         </main>
 

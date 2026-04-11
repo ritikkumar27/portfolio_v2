@@ -12,20 +12,19 @@ export default function Footer() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center text-center">
-          {/* Credit */}
-          <div>
+          {/* Name */}
+          {/* <div>
             <h3 className="text-white text-base">
-              Designed and Developed by{" "}
               <span className="purple">Ritik Kumar</span>
             </h3>
-          </div>
+          </div> */}
 
-          {/* Copyright */}
-          <div>
+          {/* Quote */}
+          {/* <div>
             <h3 className="text-white text-base">
               Copyright © {currentYear} RK
             </h3>
-          </div>
+          </div> */}
 
           {/* Social Icons */}
           <div className="flex justify-center gap-4">
@@ -39,7 +38,7 @@ export default function Footer() {
               <Icon icon="mdi:github" width={24} height={24} />
             </a>
             <a
-              href="https://linkedin.com/in/ritikkumar27"
+              href="https://www.linkedin.com/in/ritik-kumar-4a0231246/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-cosmic-accent-200 transition-colors"
@@ -48,7 +47,7 @@ export default function Footer() {
               <Icon icon="mdi:linkedin" width={24} height={24} />
             </a>
             <a
-              href="https://instagram.com/ritik.kumar27"
+              href="https://www.instagram.com/duck.devlog/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-cosmic-accent-200 transition-colors"

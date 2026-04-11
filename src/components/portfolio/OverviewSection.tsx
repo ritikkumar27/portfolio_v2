@@ -8,13 +8,13 @@ const technologies = [
   { name: "Linux", icon: "logos:linux-tux" },
   { name: "Docker", icon: "logos:docker-icon" },
   { name: "Caddy", icon: "mdi:proxy" },
-  { name: "Cloudflare", icon: "devicon:cloudflare" },
+  { name: "Cloudflare", icon: "cib:cloudflare" },
   { name: "AWS", icon: "mdi:aws" },
   { name: "JavaScript", icon: "logos:javascript" },
   { name: "TypeScript", icon: "logos:typescript-icon" },
   { name: "React", icon: "logos:react" },
   { name: "Next.js", icon: "logos:nextjs-icon" },
-  { name: "Astro", icon: "logos:astro-icon" },
+  { name: "Astro", icon: "devicon-plain:astro" },
   { name: "Tailwind CSS", icon: "devicon:tailwindcss" },
   { name: "Node.js", icon: "logos:nodejs-icon" },
   { name: "Ollama", icon: "simple-icons:ollama" },
@@ -59,8 +59,8 @@ export default function OverviewSection() {
           <ul className="space-y-3" style={{ listStyle: "none", paddingLeft: "1px" }}>
             {[
               "Infrastructure & Networking — Managing home server deployments, secure routing via Cloudflare Tunnels",
-              "Linux & Systems — Exploring Linux internals, systemd, disk management on CachyOS",
-              "Container Architecture — Self-hosted deployments with multi-stage Docker builds",
+              "Linux & Systems — Exploring Linux internals, systemd, disk management and window managers on CachyOS",
+              "Container Architecture — Self-hosted deployments with multi-stage Docker builds and Docker Compose",
               "Web & Local AI — Building apps with React & Next.js, self-hosting local LLMs via Ollama",
             ].map((activity, idx) => (
               <li key={idx} className="text-white flex items-start gap-3">
@@ -77,7 +77,7 @@ export default function OverviewSection() {
           </ul>
 
           <p className="mt-6" style={{ color: "var(--color-text-quote)" }}>
-            &ldquo;Strive to build things that make a difference!&rdquo;
+            &ldquo;Learning to build things that make a difference!&rdquo;
           </p>
         </div>
       </motion.div>

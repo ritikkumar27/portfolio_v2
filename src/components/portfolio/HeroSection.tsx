@@ -63,7 +63,7 @@ export default function HeroSection() {
           >
             A passionate{" "}
             <span className="purple">DevOps Enthusiast</span>{" "}
-            building and deploying modern web applications.
+            learning to build and deploy modern web Applications and Services.
           </motion.p>
 
           {/* Social Icons */}
