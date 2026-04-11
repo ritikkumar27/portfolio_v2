@@ -76,11 +76,8 @@ export default function ContactSection() {
                 { href: "https://www.linkedin.com/in/ritik-kumar-4a0231246", icon: "mdi:linkedin", label: "LinkedIn", text: "Let's Connect" },
                 { href: "https://github.com/ritikkumar27", icon: "mdi:github", label: "GitHub", text: "View Projects" },
               ].map((item) => (
-                <a
+                <div
                   key={item.label}
-                  href={item.href}
-                  target={item.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel="noreferrer"
                   className="flex items-center gap-4 text-white transition-colors group"
                 >
                   <SocialIconButton href={item.href} icon={item.icon} label={item.label} />
@@ -88,7 +85,7 @@ export default function ContactSection() {
                     <p className="text-sm mb-0.5" style={{ color: "var(--color-text-muted)" }}>{item.label}</p>
                     <p className="text-white">{item.text}</p>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
