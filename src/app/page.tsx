@@ -1,6 +1,6 @@
 "use client";
 
-import{
+import {
   Background,
   OverviewSection,
   ContactSection,
@@ -8,39 +8,35 @@ import{
   Blog,
   GuestbookSection,
   ProjectsSection,
-  GitHubGraph
+  GitHubGraph,
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
 import HeroSection from "@/components/portfolio/HeroSection";
+import Footer from "@/components/portfolio/Footer";
+import Preloader from "@/components/portfolio/Preloader";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen text-gray-900 dark:text-white relative">
-      <Background />
+    <>
+      <Preloader />
+      <div className="min-h-screen text-white relative">
+        <Background />
+        <Navigation />
 
-      <Navigation/>
+        <main className="max-w-6xl mx-auto px-6">
+          <HeroSection />
+          <OverviewSection />
+          <ProjectsSection />
+          <GitHubGraph />
+          <Blog />
+          <GuestbookSection />
+          <MusicSection />
+          <ContactSection />
+        </main>
 
-      <div className="max-w-6xl mx-auto px-6 pt-24">
-
-        <HeroSection />
-        
-        <OverviewSection />
-
-        <ProjectsSection />
-
-        <GitHubGraph />
-
-        <Blog />
-
-        <GuestbookSection />
-
-        <MusicSection />
-        
-        <ContactSection />
+        <Footer />
       </div>
-
-
-    </div>
+    </>
   );
-} 
+}

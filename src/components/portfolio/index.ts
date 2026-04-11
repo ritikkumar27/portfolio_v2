@@ -9,4 +9,7 @@ export { default as Blog } from './Blog';
 export { default as GuestbookSection } from './GuestbookSection';
 export { default as ProjectsSection } from './ProjectsSection';
 export { default as GitHubGraph } from './GitHubGraph';
-
+export { default as Footer } from './Footer';
+export { default as Preloader } from './Preloader';
+export { default as SectionHeading } from './SectionHeading';
+export { default as SocialIconButton } from './SocialIconButton';
