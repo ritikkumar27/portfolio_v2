@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
+import SectionHeading from "./SectionHeading";
 
 
 type ContributionDay = {
@@ -26,12 +27,12 @@ type ContributionData = {
 };
 
 
-const LEVEL_CLASSES: Record<string, string> = {
-  NONE: "bg-gray-100 dark:bg-gray-800/70 border border-gray-200/50 dark:border-gray-700/30",
-  FIRST_QUARTILE: "bg-green-200 dark:bg-green-900 border border-green-300/40 dark:border-green-800/50",
-  SECOND_QUARTILE: "bg-green-400 dark:bg-green-700 border border-green-500/40 dark:border-green-600/50",
-  THIRD_QUARTILE: "bg-green-500 dark:bg-green-500 border border-green-600/40 dark:border-green-400/50",
-  FOURTH_QUARTILE: "bg-green-600 dark:bg-green-400 border border-green-700/40 dark:border-green-300/50",
+const LEVEL_COLORS: Record<string, string> = {
+  NONE: "rgba(200, 137, 230, 0.05)",
+  FIRST_QUARTILE: "rgba(192, 132, 245, 0.2)",
+  SECOND_QUARTILE: "rgba(192, 132, 245, 0.4)",
+  THIRD_QUARTILE: "rgba(192, 132, 245, 0.7)",
+  FOURTH_QUARTILE: "#c084f5",
 };
 
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -70,14 +71,15 @@ type TooltipState = {
 function Skeleton() {
   return (
     <div className="animate-pulse">
-      <div className="h-5 w-40 bg-gray-200 dark:bg-gray-700 rounded mb-6" />
+      <div className="h-5 w-40 rounded mb-6" style={{ backgroundColor: "rgba(200,137,230,0.1)" }} />
       <div className="flex gap-1">
         {Array.from({ length: 53 }).map((_, w) => (
           <div key={w} className="flex flex-col gap-1">
             {Array.from({ length: 7 }).map((_, d) => (
               <div
                 key={d}
-                className="w-3 h-3 rounded-sm bg-gray-100 dark:bg-gray-800"
+                className="w-3 h-3 rounded-sm"
+                style={{ backgroundColor: "rgba(200,137,230,0.05)" }}
               />
             ))}
           </div>
@@ -134,7 +136,7 @@ export default function GitHubGraph() {
   const monthLabels = data ? getMonthLabels(data.weeks) : [];
 
   return (
-    <section id="github" className="py-20 relative">
+    <section id="github" className="section-padding relative">
       {/* Section heading */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -143,10 +145,8 @@ export default function GitHubGraph() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent">
-          GitHub Activity
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto leading-relaxed">
+        <SectionHeading text="GitHub" highlight="Activity" />
+        <p className="text-white mt-4" style={{ fontSize: "var(--font-size-body-lg)" }}>
           Every commit, push, and PR across 2026.
         </p>
       </motion.div>
@@ -157,15 +157,16 @@ export default function GitHubGraph() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-gray-200/60 dark:border-gray-700/60 shadow-lg"
+        className="relative p-6 md:p-8"
+        style={{ backgroundColor: "rgba(27,26,46,0.3)", boxShadow: "var(--shadow-card)" }}
       >
         {/* Header row */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-xl">
-              <Icon icon="simple-icons:github" width={22} height={22} className="dark:text-white" />
+            <div className="p-2 rounded-xl" style={{ backgroundColor: "rgba(200,137,230,0.1)" }}>
+              <Icon icon="simple-icons:github" width={22} height={22} className="text-white" />
             </div>
-            <span className="font-semibold text-gray-800 dark:text-gray-100">
+            <span className="text-white" style={{ fontWeight: 600 }}>
               @ritikkumar27
             </span>
           </div>
@@ -173,10 +174,11 @@ export default function GitHubGraph() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex items-center gap-2 px-4 py-1.5 bg-green-50 dark:bg-green-900/30 border border-green-200/50 dark:border-green-700/50 rounded-full"
+              className="flex items-center gap-2 px-4 py-1.5 rounded-full"
+              style={{ backgroundColor: "rgba(192,132,245,0.15)", border: "1px solid rgba(192,132,245,0.3)" }}
             >
-              <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
-              <span className="text-sm font-semibold text-green-700 dark:text-green-300">
+              <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: "var(--color-accent-100)" }} />
+              <span className="text-sm purple" style={{ fontWeight: 600 }}>
                 {data.total.toLocaleString()} contributions in 2026
               </span>
             </motion.div>
@@ -198,8 +200,10 @@ export default function GitHubGraph() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.12 }}
-                className="pointer-events-none absolute z-50 px-3 py-1.5 text-xs font-medium rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 whitespace-nowrap"
+                className="pointer-events-none absolute z-50 px-3 py-1.5 text-xs rounded-lg shadow-lg text-white whitespace-nowrap"
                 style={{
+                  backgroundColor: "var(--color-bg-surface)",
+                  fontWeight: 500,
                   left: tooltip.x,
                   top: tooltip.above ? tooltip.y - 40 : tooltip.y + 18,
                   transform: "translateX(-50%)",
@@ -213,7 +217,7 @@ export default function GitHubGraph() {
           {data === null && !error && <Skeleton />}
 
           {error && (
-            <div className="flex flex-col items-center gap-3 py-12 text-gray-400 dark:text-gray-500">
+            <div className="flex flex-col items-center gap-3 py-12" style={{ color: "var(--color-text-muted)" }}>
               <Icon icon="mdi:github-face" width={40} height={40} />
               <p className="text-sm">
                 Contribution data unavailable.{" "}
@@ -231,7 +235,8 @@ export default function GitHubGraph() {
                   return (
                     <div
                       key={col}
-                      className="w-3 mr-[3px] text-[10px] text-gray-400 dark:text-gray-500 font-medium flex-shrink-0"
+                      className="w-3 mr-[3px] text-[10px] font-medium flex-shrink-0"
+                      style={{ color: "var(--color-text-muted)" }}
                     >
                       {label ? label.month : ""}
                     </div>
@@ -246,7 +251,8 @@ export default function GitHubGraph() {
                   {DAY_LABELS.map((label, i) => (
                     <span
                       key={i}
-                      className="text-[10px] text-gray-400 dark:text-gray-500 leading-3 h-3 flex items-center"
+                      className="text-[10px] leading-3 h-3 flex items-center"
+                    style={{ color: "var(--color-text-muted)" }}
                     >
                       {label}
                     </span>
@@ -270,7 +276,8 @@ export default function GitHubGraph() {
                         return (
                           <motion.div
                             key={day.date}
-                            className={`w-3 h-3 rounded-sm flex-shrink-0 cursor-pointer transition-opacity duration-150 hover:opacity-70 ${LEVEL_CLASSES[day.contributionLevel]}`}
+                            className="w-3 h-3 rounded-sm flex-shrink-0 cursor-pointer transition-opacity duration-150 hover:opacity-70"
+                            style={{ backgroundColor: LEVEL_COLORS[day.contributionLevel] }}
                             initial={{ opacity: 0, scale: 0.5 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -289,14 +296,15 @@ export default function GitHubGraph() {
 
               {/* Legend */}
               <div className="flex items-center gap-2 justify-end mt-4 pr-1">
-                <span className="text-[11px] text-gray-400 dark:text-gray-500">Less</span>
-                {Object.values(LEVEL_CLASSES).map((cls, i) => (
+                <span className="text-[11px]" style={{ color: "var(--color-text-muted)" }}>Less</span>
+                {Object.values(LEVEL_COLORS).map((color, i) => (
                   <div
                     key={i}
-                    className={`w-3 h-3 rounded-sm flex-shrink-0 ${cls}`}
+                    className="w-3 h-3 rounded-sm flex-shrink-0"
+                    style={{ backgroundColor: color }}
                   />
                 ))}
-                <span className="text-[11px] text-gray-400 dark:text-gray-500">More</span>
+                <span className="text-[11px]" style={{ color: "var(--color-text-muted)" }}>More</span>
               </div>
             </div>
           )}

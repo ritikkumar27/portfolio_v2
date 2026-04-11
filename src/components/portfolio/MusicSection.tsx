@@ -30,7 +30,7 @@ export default function MusicSection() {
   const [duration, setDuration] = useState(0);
   const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
-  
+
   // Conditionally collapse on mobile load
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -126,21 +126,30 @@ export default function MusicSection() {
 
   return (
     <div className={`fixed bottom-6 left-6 md:left-8 md:bottom-8 z-40 transition-all duration-300 ${
-      isMinimized 
-        ? "w-14 h-14 md:w-16 md:h-16 rounded-full cursor-pointer hover:scale-105 active:scale-95 flex items-center justify-center bg-white/10 dark:bg-black/30 backdrop-blur-xl border border-gray-200/40 dark:border-white/20 shadow-2xl" 
-        : "w-[calc(100%-3rem)] md:w-80 bg-white/5 dark:bg-black/20 backdrop-blur-md border border-gray-200/30 dark:border-white/10 shadow-xl rounded-2xl overflow-hidden"
-    }`}>
-      
+      isMinimized
+        ? "w-14 h-14 md:w-16 md:h-16 rounded-full cursor-pointer hover:scale-105 active:scale-95 flex items-center justify-center backdrop-blur-xl shadow-2xl"
+        : "w-[calc(100%-3rem)] md:w-80 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden"
+    }`}
+    style={{
+      backgroundColor: isMinimized ? "var(--color-bg-surface)" : "var(--color-bg-surface)",
+      border: isMinimized
+        ? "1px solid rgba(200, 137, 230, 0.3)"
+        : "1px solid rgba(200, 137, 230, 0.15)",
+    }}
+    >
+
       {isMinimized ? (
-        <div 
+        <div
           onClick={() => setIsMinimized(false)}
           className="w-full h-full relative flex items-center justify-center group"
           title="Expand Music Player"
         >
           {/* Spinning Cover */}
-          <div className={`absolute inset-0 rounded-full overflow-hidden transition-all duration-500 border-2 border-gray-200/20 dark:border-indigo-500/30 ${isPlaying ? 'spin-slow' : ''}`}>
+          <div className={`absolute inset-0 rounded-full overflow-hidden transition-all duration-500 ${isPlaying ? 'spin-slow' : ''}`}
+            style={{ border: "2px solid rgba(200, 137, 230, 0.3)" }}
+          >
              <img src={currentSong.coverImage} className="w-full h-full object-cover" alt="Vinyl Cover" />
-             <div className="absolute inset-0 m-auto w-3 h-3 bg-white/20 dark:bg-black/40 backdrop-blur-sm rounded-full border border-gray-300/30 dark:border-white/20"></div>
+             <div className="absolute inset-0 m-auto w-3 h-3 backdrop-blur-sm rounded-full" style={{ backgroundColor: "rgba(12,5,19,0.4)", border: "1px solid rgba(200,137,230,0.2)" }}></div>
           </div>
           {/* View Icon Overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-[2px]">
@@ -151,35 +160,45 @@ export default function MusicSection() {
         <>
           {/* Main Player Area */}
           <div className="px-4 pb-4 pt-8 relative">
-            
+
             {/* Context menu for minimize */}
             <button
               onClick={() => setIsMinimized(true)}
-              className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors bg-black/5 dark:bg-white/10 rounded-full z-10"
+              className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 transition-colors rounded-full z-10"
+              style={{ color: "var(--color-text-muted)", backgroundColor: "rgba(200,137,230,0.1)" }}
               aria-label="Minimize Player"
             >
               <ChevronDown size={16} />
             </button>
+
         {/* Track Info & Play Button */}
         <div className="flex items-center gap-4">
           {/* Constantly spinning cover if playing */}
-          <div className={`relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-gray-200/20 dark:border-white/10 shadow-sm transition-all duration-500 ${isPlaying ? 'spin-slow shadow-indigo-500/30 ring-2 ring-indigo-500/50' : ''}`}>
-            <img 
-              src={currentSong.coverImage} 
+          <div className={`relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm transition-all duration-500 ${isPlaying ? 'spin-slow' : ''}`}
+            style={{
+              border: "2px solid rgba(200, 137, 230, 0.2)",
+              boxShadow: isPlaying ? "0 0 15px rgba(192,132,245,0.3), 0 0 0 2px rgba(192,132,245,0.5)" : "none",
+            }}
+          >
+            <img
+              src={currentSong.coverImage}
               alt={`${currentSong.title} Cover`}
               className="w-full h-full object-cover rounded-full"
             />
-            {/* <div className="absolute inset-0 m-auto w-3 h-3 bg-white/20 dark:bg-black/40 backdrop-blur-sm rounded-full border border-gray-300/30 dark:border-white/20"></div> */}
           </div>
 
           <div className="flex-1 min-w-0">
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white truncate">{currentSong.title}</h3>
-            <p className="text-xs text-indigo-600 dark:text-indigo-400 truncate">{currentSong.artist}</p>
+            <h3 className="text-sm text-white truncate" style={{ fontWeight: 600 }}>{currentSong.title}</h3>
+            <p className="text-xs truncate purple">{currentSong.artist}</p>
           </div>
 
-          <button 
+          <button
             onClick={togglePlay}
-            className="p-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg shadow-indigo-600/20 transition-all duration-200 active:scale-95 flex items-center justify-center flex-shrink-0"
+            className="p-3 text-white rounded-full shadow-lg transition-all duration-200 active:scale-95 flex items-center justify-center flex-shrink-0"
+            style={{
+              backgroundColor: "var(--color-accent-500)",
+              boxShadow: "0 0 15px rgba(192,132,245,0.2)",
+            }}
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             {isPlaying ? (
@@ -193,31 +212,35 @@ export default function MusicSection() {
         {/* Progress Bar & Secondary Controls */}
         <div className="mt-4 space-y-2">
           <div className="flex items-center gap-3">
-            <span className="text-[10px] text-gray-500 dark:text-gray-400 font-medium w-6">{formatTime(currentTime)}</span>
+            <span className="text-[10px] w-6" style={{ color: "var(--color-text-muted)" }}>{formatTime(currentTime)}</span>
             <input
               type="range"
               min="0"
               max="100"
               value={isNaN(progress) ? 0 : progress}
               onChange={handleSeek}
-              className="flex-1 h-1 bg-gray-200 dark:bg-gray-700/50 rounded-full appearance-none cursor-pointer accent-indigo-600 hover:accent-indigo-500 transition-all duration-300"
-              style={{ backgroundSize: `${progress}% 100%` }}
+              className="flex-1 h-1 rounded-full appearance-none cursor-pointer transition-all duration-300"
+              style={{
+                backgroundColor: "rgba(200, 137, 230, 0.2)",
+                accentColor: "#c770f0",
+              }}
             />
-            <span className="text-[10px] text-gray-500 dark:text-gray-400 font-medium w-6 text-right">{formatTime(duration)}</span>
+            <span className="text-[10px] w-6 text-right" style={{ color: "var(--color-text-muted)" }}>{formatTime(duration)}</span>
           </div>
-          
+
           <div className="flex items-center justify-between pt-1">
-            <button onClick={handlePrev} className="p-1.5 text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" aria-label="Previous">
+            <button onClick={handlePrev} className="p-1.5 transition-colors" style={{ color: "var(--color-text-muted)" }} aria-label="Previous">
               <SkipBack size={18} className="fill-current" />
             </button>
-            <button 
-              onClick={() => setIsPlaylistOpen(!isPlaylistOpen)} 
-              className={`p-1.5 transition-colors ${isPlaylistOpen ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400'}`}
+            <button
+              onClick={() => setIsPlaylistOpen(!isPlaylistOpen)}
+              className="p-1.5 transition-colors"
+              style={{ color: isPlaylistOpen ? "var(--color-accent-200)" : "var(--color-text-muted)" }}
               aria-label="Toggle Playlist"
             >
               <ListMusic size={18} />
             </button>
-            <button onClick={handleNext} className="p-1.5 text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" aria-label="Next">
+            <button onClick={handleNext} className="p-1.5 transition-colors" style={{ color: "var(--color-text-muted)" }} aria-label="Next">
               <SkipForward size={18} className="fill-current" />
             </button>
           </div>
@@ -225,24 +248,25 @@ export default function MusicSection() {
       </div>
 
       {/* Collapsible Playlist */}
-      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isPlaylistOpen ? 'max-h-64 border-t border-gray-200/20 dark:border-white/10 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="p-2 overflow-y-auto max-h-64 space-y-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-200 dark:[&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isPlaylistOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}
+        style={{ borderTop: isPlaylistOpen ? "1px solid rgba(200,137,230,0.15)" : "none" }}
+      >
+        <div className="p-2 overflow-y-auto max-h-64 space-y-1">
           {playlist.map((song, index) => {
             const isActive = currentSongIndex === index;
             return (
               <button
                 key={song.id}
                 onClick={() => playSong(index)}
-                className={`w-full flex items-center gap-3 p-2 rounded-xl transition-all duration-200 group ${
-                  isActive 
-                    ? "bg-black/5 dark:bg-white/10 shadow-sm" 
-                    : "hover:bg-black/5 dark:hover:bg-white/5"
-                }`}
+                className="w-full flex items-center gap-3 p-2 rounded-xl transition-all duration-200 group"
+                style={{
+                  backgroundColor: isActive ? "rgba(200,137,230,0.1)" : "transparent",
+                }}
               >
                 <div className="relative w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
-                  <img 
-                    src={song.coverImage} 
-                    alt={song.title} 
+                  <img
+                    src={song.coverImage}
+                    alt={song.title}
                     className={`w-full h-full object-cover transition-transform duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}
                   />
                   {isActive && isPlaying && (
@@ -255,19 +279,20 @@ export default function MusicSection() {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="flex-1 text-left min-w-0">
-                  <h5 className={`text-xs font-semibold truncate transition-colors duration-200 ${
-                    isActive 
-                      ? "text-indigo-600 dark:text-indigo-400" 
-                      : "text-gray-800 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400"
-                  }`}>
+                  <h5 className="text-xs truncate transition-colors duration-200"
+                    style={{
+                      color: isActive ? "var(--color-accent-200)" : "var(--color-text-body)",
+                      fontWeight: 600,
+                    }}
+                  >
                     {song.title}
                   </h5>
-                  <p className="text-[10px] text-gray-500 dark:text-gray-400 truncate">{song.artist}</p>
+                  <p className="text-[10px] truncate" style={{ color: "var(--color-text-muted)" }}>{song.artist}</p>
                 </div>
-                
-                <div className="text-[10px] font-medium text-gray-400 dark:text-gray-500 pl-2">
+
+                <div className="text-[10px] pl-2" style={{ color: "var(--color-text-muted)" }}>
                   {song.duration}
                 </div>
               </button>
@@ -277,25 +302,14 @@ export default function MusicSection() {
       </div>
       </>
       )}
-      
+
       {/* Hidden Audio Element */}
-      <audio 
-        ref={audioRef} 
-        src={currentSong.audioUrl} 
+      <audio
+        ref={audioRef}
+        src={currentSong.audioUrl}
         preload="auto"
         loop={playlist.length === 1}
       />
-      
-      {/* Required for the slow spinning vinyl effect */}
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .spin-slow {
-          animation: spin-slow 8s linear infinite;
-        }
-      `}} />
     </div>
   );
 }

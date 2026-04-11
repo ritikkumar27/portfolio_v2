@@ -40,34 +40,55 @@ export default function GuestbookForm() {
     }
   };
 
+  const inputStyle: React.CSSProperties = {
+    backgroundColor: "transparent",
+    border: "1px solid rgba(200, 137, 230, 0.3)",
+    borderRadius: "var(--radius-btn)",
+    color: "var(--color-text-body)",
+  };
+
   return (
-    <div className="bg-white/5 dark:bg-gray-800/30 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-6 shadow-sm">
-      <h3 className="text-xl font-semibold mb-2">Leave a Message</h3>
-      <p className="text-gray-600 dark:text-gray-400 text-sm mb-6">
+    <div
+      className="p-6"
+      style={{
+        backgroundColor: "transparent",
+        outline: "var(--border-chip)",
+        borderRadius: "var(--radius-btn)",
+      }}
+    >
+      <h3 className="text-xl text-white mb-2" style={{ fontWeight: 600 }}>
+        Leave a <span className="purple">Message</span>
+      </h3>
+      <p className="text-sm mb-6" style={{ color: "var(--color-text-muted)" }}>
         Sign the digital guestbook and say hi!
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+          <label htmlFor="name" className="block text-sm text-white mb-1">Name</label>
           <input
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2 bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all font-sans"
+            className="w-full px-4 py-2 focus:outline-none focus:ring-2 transition-all"
+            style={{
+              ...inputStyle,
+              focusRingColor: "var(--color-accent-200)",
+            } as React.CSSProperties}
             placeholder="Name"
             required
             maxLength={50}
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+          <label htmlFor="message" className="block text-sm text-white mb-1">Message</label>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-2 bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all resize-none h-24 font-sans"
+            className="w-full px-4 py-2 focus:outline-none focus:ring-2 transition-all resize-none h-24"
+            style={inputStyle}
             placeholder="Drop a message or feedback for me 💬"
             required
             maxLength={250}
@@ -77,7 +98,11 @@ export default function GuestbookForm() {
         <button
           type="submit"
           disabled={isSubmitting || !name.trim() || !message.trim()}
-          className="w-full py-2.5 px-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+          className="w-full py-2.5 px-4 text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:-translate-y-0.5"
+          style={{
+            backgroundColor: "var(--color-btn-primary)",
+            borderRadius: "var(--radius-btn)",
+          }}
         >
           {isSubmitting ? (
             <Icon icon="eos-icons:loading" width={20} />
@@ -95,7 +120,12 @@ export default function GuestbookForm() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="mt-4 p-3 bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400 text-sm rounded-lg flex items-center gap-2 backdrop-blur-sm"
+            className="mt-4 p-3 text-sm rounded-lg flex items-center gap-2"
+            style={{
+              backgroundColor: "rgba(192, 132, 245, 0.1)",
+              border: "1px solid rgba(192, 132, 245, 0.3)",
+              color: "var(--color-accent-100)",
+            }}
           >
             <Icon icon="lucide:check-circle-2" width={18} className="shrink-0" />
             Message posted successfully!
@@ -106,7 +136,12 @@ export default function GuestbookForm() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="mt-4 p-3 bg-red-500/10 border border-red-500/20 text-red-700 dark:text-red-400 text-sm rounded-lg flex items-center gap-2 backdrop-blur-sm"
+            className="mt-4 p-3 text-sm rounded-lg flex items-center gap-2"
+            style={{
+              backgroundColor: "rgba(200, 50, 50, 0.15)",
+              border: "1px solid rgba(200, 50, 50, 0.3)",
+              color: "#f87171",
+            }}
           >
             <Icon icon="lucide:alert-circle" width={18} className="shrink-0" />
             Failed to post message. Try again later.
