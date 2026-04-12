@@ -43,7 +43,7 @@ export default function Navigation() {
           className="text-lg font-normal text-white no-underline"
           style={{ fontSize: "1.4em" }}
         >
-          <span className="purple">R</span>K
+          <span className="pink">R</span>K
         </a>
 
         {/* Desktop Nav */}

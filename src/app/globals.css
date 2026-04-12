@@ -8,51 +8,77 @@
 		--color-bg-deep:         #1a1f26;
 		--color-bg-base-start:   #222831;
 		--color-bg-base-end:     #1a1f26;
-		--color-bg-surface:      rgba(57, 62, 70, 0.85);
+		--color-bg-surface:      rgba(57, 62, 70, 0.9);
 		--color-bg-footer:       #161b22;
 		--color-bg-mobile-nav:   #2a2f38;
-		--color-bg-card:         rgba(57, 62, 70, 0.45);
+		--color-bg-card:         rgba(57, 62, 70, 0.35);
 
-		/* === PRIMARY ACCENT — TEAL === */
-		--color-accent-100:  #3FC1C9;
-		--color-accent-200:  #00ADB5;
-		--color-accent-300:  #00c4cd;
-		--color-accent-400:  #009aa2;
-		--color-accent-500:  #007f86;
-		--color-accent-600:  #006970;
-		--color-accent-700:  #005459;
-		--color-accent-800:  #003e42;
-		--color-accent-900:  #002a2d;
-		--color-accent-950:  #001618;
+		/* === PRIMARY ACCENT — TEAL (#00ADB5, #3FC1C9) === */
+		--color-teal-bright:  #3FC1C9;
+		--color-teal:         #00ADB5;
+		--color-teal-dark:    #009aa2;
+		--color-teal-muted:   rgba(0, 173, 181, 0.18);
+		--color-teal-border:  rgba(0, 173, 181, 0.45);
+		--color-teal-shadow:  rgba(0, 173, 181, 0.22);
 
-		/* === SECONDARY ACCENT — PINK === */
-		--color-accent-pink:       #FC5185;
-		--color-accent-pink-hover: #e8466f;
-		--color-accent-pink-muted: rgba(252, 81, 133, 0.15);
+		/* === SECONDARY ACCENT — HOT PINK (#FC5185) === */
+		--color-pink:         #FC5185;
+		--color-pink-dark:    #e8466f;
+		--color-pink-muted:   rgba(252, 81, 133, 0.15);
+		--color-pink-border:  rgba(252, 81, 133, 0.45);
+		--color-pink-shadow:  rgba(252, 81, 133, 0.25);
 
-		/* === BUTTONS === */
-		--color-btn-primary:       #00ADB5;
-		--color-btn-primary-hover: #009aa2;
-		--color-btn-ghost:         rgba(0, 173, 181, 0.18);
-		--color-btn-ghost-hover:   rgba(0, 173, 181, 0.32);
+		/* === TERTIARY ACCENT — CORAL (#F05454) === */
+		--color-coral:        #F05454;
+		--color-coral-dark:   #d94444;
+		--color-coral-muted:  rgba(240, 84, 84, 0.15);
+		--color-coral-shadow: rgba(240, 84, 84, 0.25);
 
 		/* === TEXT === */
-		--color-text-primary:  #EEEEEE;
-		--color-text-body:     #EEEEEE;
-		--color-text-muted:    #8a9bb0;
-		--color-text-quote:    #a0afc0;
+		--color-text-primary:  #F5F5F5;     /* Bright white for headings */
+		--color-text-body:     #F5F5F5;     /* Main body text */
+		--color-text-muted:    #DDDDDD;     /* Labels, timestamps — much more visible */
+		--color-text-quote:    #DDDDDD;     /* Quotes */
+		--color-text-dim:      #aab0b8;     /* Very secondary info */
 
-		/* === SHADOWS (teal-tinted) === */
-		--shadow-navbar:       0px 10px 10px 0px rgba(10, 14, 20, 0.4);
-		--shadow-card:         0 4px 5px 3px rgba(0, 173, 181, 0.15);
-		--shadow-card-hover:   0 4px 8px 5px rgba(0, 173, 181, 0.28);
+		/* === BUTTONS === */
+		/* Primary CTA = Pink */
+		--color-btn-primary:        #FC5185;
+		--color-btn-primary-hover:  #e8466f;
+		/* Secondary / Ghost = Teal */
+		--color-btn-ghost:          rgba(0, 173, 181, 0.18);
+		--color-btn-ghost-hover:    rgba(0, 173, 181, 0.32);
+		/* Coral = destructive/warning */
+		--color-btn-coral:          #F05454;
+		--color-btn-coral-hover:    #d94444;
+
+		/* Legacy alias (components use --color-accent-* via CSS vars) */
+		--color-accent-100:   #3FC1C9;
+		--color-accent-200:   #00ADB5;
+		--color-accent-300:   #FC5185;
+		--color-accent-400:   #FC5185;
+		--color-accent-500:   #F05454;
+		--color-accent-600:   #e8466f;
+		--color-accent-700:   #00ADB5;
+		--color-accent-800:   #393E46;
+		--color-accent-900:   #2e333b;
+		--color-accent-950:   #222831;
+		--color-accent-pink:  #FC5185;
+
+		/* === SHADOWS === */
+		--shadow-navbar:       0px 10px 10px 0px rgba(10, 14, 20, 0.5);
+		--shadow-card:         0 4px 6px 3px rgba(0, 173, 181, 0.12);
+		--shadow-card-hover:   0 4px 10px 5px rgba(252, 81, 133, 0.22);
 		--shadow-chip:         4px 5px 4px 3px rgba(0, 173, 181, 0.08);
-		--shadow-social-glow:  0 0 15px rgba(0, 173, 181, 0.7);
-		--shadow-icon-hover:   0 0 8px rgba(0, 173, 181, 0.6);
+		--shadow-social-glow:  0 0 15px rgba(252, 81, 133, 0.7);
+		--shadow-icon-hover:   0 0 8px rgba(252, 81, 133, 0.6);
+		--shadow-pink-glow:    0 0 20px rgba(252, 81, 133, 0.5);
+		--shadow-teal-glow:    0 0 20px rgba(0, 173, 181, 0.5);
+		--shadow-coral-glow:   0 0 15px rgba(240, 84, 84, 0.5);
 
 		/* === BORDERS === */
 		--border-chip:         1.7px solid rgba(0, 173, 181, 0.45);
-		--border-chip-hover:   2.2px solid rgba(0, 173, 181, 0.8);
+		--border-chip-hover:   2.2px solid rgba(0, 173, 181, 0.85);
 		--border-surface:      1px solid rgba(57, 62, 70, 0.9);
 
 		/* === RADIUS === */
@@ -63,7 +89,7 @@
 		--radius-scrollbar:12px;
 
 		/* === TYPOGRAPHY === */
-		--font-primary:   "PT Mono", monospace;
+		--font-primary:            "PT Mono", monospace;
 		--font-size-hero-greeting: 2.4em;
 		--font-size-hero-name:     2.5em;
 		--font-size-typewriter:    2.2em;
@@ -76,11 +102,8 @@
 
 		/* === SCROLLBAR === */
 		--color-scrollbar-track:       #222831;
-		--color-scrollbar-thumb:       rgba(0, 173, 181, 0.7);
-		--color-scrollbar-thumb-hover: rgba(63, 193, 201, 0.9);
-
-		/* === GITHUB === */
-		--color-github-calendar: #00ADB5;
+		--color-scrollbar-thumb:       rgba(0, 173, 181, 0.65);
+		--color-scrollbar-thumb-hover: #FC5185;
 	}
 
 	body {
@@ -103,17 +126,21 @@
 }
 
 @layer components {
-	/* Teal accent highlight — replaces .purple across all headings */
+	/* Teal highlight — section headings, chips, borders */
 	.purple {
-		color: var(--color-accent-200);
+		color: var(--color-teal);
 	}
 
-	/* Pink accent — used for special highlights */
+	/* Pink highlight — typewriter, logo R, special moments */
 	.pink {
-		color: var(--color-accent-pink);
+		color: var(--color-pink);
 	}
 
-	/* Section spacing pattern */
+	/* Coral highlight — hover pops, warnings */
+	.coral {
+		color: var(--color-coral);
+	}
+
 	.section-padding {
 		padding-top: 150px;
 		padding-bottom: 30px;
@@ -154,8 +181,8 @@
    SELECTION
    ======================================== */
 ::selection {
-	background-color: rgba(0, 173, 181, 0.25);
-	color: #EEEEEE;
+	background-color: rgba(252, 81, 133, 0.3);
+	color: #F5F5F5;
 }
 
 /* ========================================
@@ -175,7 +202,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-	outline: 2px solid var(--color-accent-200);
+	outline: 2px solid var(--color-teal);
 	outline-offset: 2px;
 }
 
@@ -183,7 +210,6 @@ textarea:focus-visible {
    ANIMATIONS
    ======================================== */
 
-/* Waving hand emoji */
 @keyframes wave-animation {
 	0%   { transform: rotate(0deg); }
 	10%  { transform: rotate(14deg); }
@@ -203,7 +229,6 @@ textarea:focus-visible {
 	display: inline-block;
 }
 
-/* Typewriter cursor blink */
 @keyframes cursor-blink {
 	from, to { opacity: 1; }
 	50%       { opacity: 0; }
@@ -213,7 +238,6 @@ textarea:focus-visible {
 	animation: cursor-blink 1s step-end infinite;
 }
 
-/* Spinning vinyl for music player */
 @keyframes spin-slow {
 	from { transform: rotate(0deg); }
 	to   { transform: rotate(360deg); }
