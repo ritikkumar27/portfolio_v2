@@ -61,7 +61,7 @@ export default function Footer() {
         {/* Quote */}
         <div className="text-center mt-3">
           <p style={{ color: "var(--color-text-muted)" }} className="text-sm">
-            &ldquo;Strive to build things that make a difference!&rdquo;
+            &ldquo;Orchestrated complexity. Unified simplicity!&rdquo;
           </p>
         </div>
       </div>

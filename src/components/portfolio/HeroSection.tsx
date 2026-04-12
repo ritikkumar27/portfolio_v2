@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import TypewriterRole from "./TypewriterRole";
 import SocialIconButton from "./SocialIconButton";
@@ -96,7 +97,7 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right Column — Illustration Placeholder */}
+        {/* Right Column — Illustration */}
         <motion.div
           className="md:col-span-5 flex items-center justify-center"
           initial={{ opacity: 0, x: 30 }}
@@ -104,14 +105,25 @@ export default function HeroSection() {
           transition={{ delay: 0.6, duration: 0.8 }}
           style={{ paddingTop: "2em" }}
         >
+          {/* Glowing ring border */}
           <div
-            className="w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center"
+            className="w-64 h-64 md:w-80 md:h-80 rounded-full p-[3px] flex-shrink-0"
             style={{
-              background: "linear-gradient(135deg, #222831, #393E46, rgba(252, 81, 133, 0.2))",
-              boxShadow: "0 0 50px rgba(252, 81, 133, 0.15), 0 0 25px rgba(0, 173, 181, 0.1)",
+              background: "linear-gradient(135deg, #00ADB5, #FC5185)",
+              boxShadow: "0 0 80px rgba(252, 81, 132, 0.92), 0 0 500px rgba(0, 172, 181, 0.92)",
             }}
           >
-            <span className="text-6xl md:text-8xl">💻</span>
+            {/* Inner circle — clip photo */}
+            <div className="w-full h-full rounded-full overflow-hidden">
+              <Image
+                src="/profile.jpg"        
+                alt="Ritik Kumar"
+                width={320}
+                height={320}
+                priority
+                className="w-full h-full object-cover object-top rounded-full"
+              />
+            </div>
           </div>
         </motion.div>
       </motion.div>

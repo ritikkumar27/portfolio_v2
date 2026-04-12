@@ -32,7 +32,7 @@ export default function Navigation() {
       }`}
       style={{
         backgroundColor: isScrolled ? "var(--color-bg-surface)" : "transparent",
-        backdropFilter: isScrolled ? "blur(15px)" : "none",
+        backdropFilter: isScrolled ? "blur(2px)" : "none",
         padding: "0.3rem 2rem",
       }}
     >
