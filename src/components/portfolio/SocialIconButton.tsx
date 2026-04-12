@@ -21,7 +21,7 @@ export default function SocialIconButton({ href, icon, label }: SocialIconButton
         color: "var(--color-accent-950)",
       }}
     >
-      <Icon icon={icon} width={20} height={20} />
+      <Icon icon={icon} width={30} height={30} />
 
       {/* Glow pseudo-element replacement using a span */}
       <span

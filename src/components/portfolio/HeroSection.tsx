@@ -76,23 +76,28 @@ export default function HeroSection() {
           >
             <SocialIconButton
               href="https://github.com/ritikkumar27"
-              icon="mdi:github"
+              icon="simple-icons:github"
               label="GitHub"
             />
             <SocialIconButton
               href="https://www.linkedin.com/in/ritik-kumar-4a0231246"
-              icon="mdi:linkedin"
+              icon="skill-icons:linkedin"
               label="LinkedIn"
             />
             <SocialIconButton
               href="https://www.instagram.com/duck.devlog/"
-              icon="mdi:instagram"
+              icon="skill-icons:instagram"
               label="Instagram"
             />
             <SocialIconButton
               href="https://www.reddit.com/user/duckworth108/"
-              icon="mdi:reddit"
+              icon="logos:reddit-icon"
               label="Reddit"
+            />
+            <SocialIconButton
+              href="https://x.com/duckworth_108"
+              icon="hugeicons:new-twitter-ellipse"
+              label="X"
             />
           </motion.div>
         </div>

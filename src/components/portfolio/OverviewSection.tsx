@@ -58,10 +58,10 @@ export default function OverviewSection() {
           </h3>
           <ul className="space-y-3" style={{ listStyle: "none", paddingLeft: "1px" }}>
             {[
-              "Infrastructure & Networking — Managing home server deployments, secure routing via Cloudflare Tunnels",
-              "Linux & Systems — Exploring Linux internals, systemd, disk management and window managers on CachyOS",
-              "Container Architecture — Self-hosted deployments with multi-stage Docker builds and Docker Compose",
-              "Web & Local AI — Building apps with React & Next.js, self-hosting local LLMs via Ollama",
+              "-> Infrastructure & Networking — Managing home server deployments, secure routing via Cloudflare Tunnels",
+              "-> Linux & Systems — Exploring Linux internals, systemd, disk management and window managers on CachyOS",
+              "-> Container Architecture — Self-hosted deployments with multi-stage Docker builds and Docker Compose",
+              "-> Web & Local AI — Building apps with React & Next.js, self-hosting local LLMs via Ollama",
             ].map((activity, idx) => (
               <li key={idx} className="text-white flex items-start gap-3">
                 <Icon
