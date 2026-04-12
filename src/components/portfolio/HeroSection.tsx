@@ -108,7 +108,7 @@ export default function HeroSection() {
             className="w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center"
             style={{
               background: "linear-gradient(135deg, var(--color-accent-900), var(--color-accent-800))",
-              boxShadow: "0 0 40px rgba(199, 112, 240, 0.15)",
+              boxShadow: "0 0 40px rgba(0, 173, 181, 0.12)",
             }}
           >
             <span className="text-6xl md:text-8xl">💻</span>

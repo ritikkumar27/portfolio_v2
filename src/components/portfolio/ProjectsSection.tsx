@@ -11,7 +11,7 @@ function Tag({ label }: { label: string }) {
       className="inline-block text-xs text-white px-2.5 py-1 leading-none"
       style={{
         borderRadius: "var(--radius-chip)",
-        outline: "1px solid rgba(200, 137, 230, 0.4)",
+        outline: "1px solid rgba(0, 173, 181, 0.35)",
         opacity: 0.85,
       }}
     >

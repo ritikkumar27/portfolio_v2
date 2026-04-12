@@ -42,7 +42,7 @@ export default function GuestbookForm() {
 
   const inputStyle: React.CSSProperties = {
     backgroundColor: "transparent",
-    border: "1px solid rgba(200, 137, 230, 0.3)",
+    border: "1px solid rgba(0, 173, 181, 0.3)",
     borderRadius: "var(--radius-btn)",
     color: "var(--color-text-body)",
   };
@@ -122,8 +122,8 @@ export default function GuestbookForm() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="mt-4 p-3 text-sm rounded-lg flex items-center gap-2"
             style={{
-              backgroundColor: "rgba(192, 132, 245, 0.1)",
-              border: "1px solid rgba(192, 132, 245, 0.3)",
+              backgroundColor: "rgba(0, 173, 181, 0.08)",
+              border: "1px solid rgba(0, 173, 181, 0.25)",
               color: "var(--color-accent-100)",
             }}
           >

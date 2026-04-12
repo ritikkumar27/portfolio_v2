@@ -52,7 +52,7 @@ export default function GuestbookList() {
         <span
           className="ml-auto text-xs px-2 py-1 rounded-full"
           style={{
-            backgroundColor: "rgba(192, 132, 245, 0.1)",
+            backgroundColor: "rgba(0, 173, 181, 0.08)",
             color: "var(--color-accent-100)",
           }}
         >
@@ -66,11 +66,11 @@ export default function GuestbookList() {
             <div
               key={i}
               className="animate-pulse p-4 rounded-lg"
-              style={{ backgroundColor: "rgba(200, 137, 230, 0.05)" }}
+              style={{ backgroundColor: "rgba(0, 173, 181, 0.04)" }}
             >
-              <div className="h-4 rounded w-1/4 mb-3" style={{ backgroundColor: "rgba(200,137,230,0.15)" }} />
-              <div className="h-3 rounded w-3/4 mb-2" style={{ backgroundColor: "rgba(200,137,230,0.1)" }} />
-              <div className="h-3 rounded w-1/2" style={{ backgroundColor: "rgba(200,137,230,0.1)" }} />
+              <div className="h-4 rounded w-1/4 mb-3" style={{ backgroundColor: "rgba(0,173,181,0.12)" }} />
+              <div className="h-3 rounded w-3/4 mb-2" style={{ backgroundColor: "rgba(0,173,181,0.08)" }} />
+              <div className="h-3 rounded w-1/2" style={{ backgroundColor: "rgba(0,173,181,0.08)" }} />
             </div>
           ))
         ) : messages.length === 0 ? (
@@ -100,7 +100,7 @@ export default function GuestbookList() {
                   <span
                     className="text-[11px] whitespace-nowrap px-2 py-0.5 rounded-full"
                     style={{
-                      backgroundColor: "rgba(192, 132, 245, 0.1)",
+                      backgroundColor: "rgba(0, 173, 181, 0.08)",
                       color: "var(--color-text-muted)",
                     }}
                   >

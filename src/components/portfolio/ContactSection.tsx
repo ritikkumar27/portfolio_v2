@@ -36,7 +36,7 @@ export default function ContactSection() {
 
   const inputStyle: React.CSSProperties = {
     backgroundColor: "transparent",
-    border: "1px solid rgba(200, 137, 230, 0.3)",
+    border: "1px solid rgba(0, 173, 181, 0.3)",
     borderRadius: "var(--radius-btn)",
     color: "var(--color-text-body)",
   };

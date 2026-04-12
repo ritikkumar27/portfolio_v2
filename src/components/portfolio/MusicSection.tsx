@@ -133,8 +133,8 @@ export default function MusicSection() {
     style={{
       backgroundColor: isMinimized ? "var(--color-bg-surface)" : "var(--color-bg-surface)",
       border: isMinimized
-        ? "1px solid rgba(200, 137, 230, 0.3)"
-        : "1px solid rgba(200, 137, 230, 0.15)",
+        ? "1px solid rgba(0, 173, 181, 0.3)"
+        : "1px solid rgba(0, 173, 181, 0.12)",
     }}
     >
 
@@ -146,7 +146,7 @@ export default function MusicSection() {
         >
           {/* Spinning Cover */}
           <div className={`absolute inset-0 rounded-full overflow-hidden transition-all duration-500 ${isPlaying ? 'spin-slow' : ''}`}
-            style={{ border: "2px solid rgba(200, 137, 230, 0.3)" }}
+            style={{ border: "2px solid rgba(0, 173, 181, 0.3)" }}
           >
              <img src={currentSong.coverImage} className="w-full h-full object-cover" alt="Vinyl Cover" />
              <div className="absolute inset-0 m-auto w-3 h-3 backdrop-blur-sm rounded-full" style={{ backgroundColor: "rgba(12,5,19,0.4)", border: "1px solid rgba(200,137,230,0.2)" }}></div>
@@ -165,7 +165,7 @@ export default function MusicSection() {
             <button
               onClick={() => setIsMinimized(true)}
               className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 transition-colors rounded-full z-10"
-              style={{ color: "var(--color-text-muted)", backgroundColor: "rgba(200,137,230,0.1)" }}
+              style={{ color: "var(--color-text-muted)", backgroundColor: "rgba(0,173,181,0.08)" }}
               aria-label="Minimize Player"
             >
               <ChevronDown size={16} />
@@ -177,7 +177,7 @@ export default function MusicSection() {
           <div className={`relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm transition-all duration-500 ${isPlaying ? 'spin-slow' : ''}`}
             style={{
               border: "2px solid rgba(200, 137, 230, 0.2)",
-              boxShadow: isPlaying ? "0 0 15px rgba(192,132,245,0.3), 0 0 0 2px rgba(192,132,245,0.5)" : "none",
+              boxShadow: isPlaying ? "0 0 15px rgba(0,173,181,0.25), 0 0 0 2px rgba(192,132,245,0.5)" : "none",
             }}
           >
             <img
@@ -221,8 +221,8 @@ export default function MusicSection() {
               onChange={handleSeek}
               className="flex-1 h-1 rounded-full appearance-none cursor-pointer transition-all duration-300"
               style={{
-                backgroundColor: "rgba(200, 137, 230, 0.2)",
-                accentColor: "#c770f0",
+                backgroundColor: "rgba(0, 173, 181, 0.2)",
+                accentColor: "#00ADB5",
               }}
             />
             <span className="text-[10px] w-6 text-right" style={{ color: "var(--color-text-muted)" }}>{formatTime(duration)}</span>
@@ -249,7 +249,7 @@ export default function MusicSection() {
 
       {/* Collapsible Playlist */}
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isPlaylistOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}
-        style={{ borderTop: isPlaylistOpen ? "1px solid rgba(200,137,230,0.15)" : "none" }}
+        style={{ borderTop: isPlaylistOpen ? "1px solid rgba(0,173,181,0.12)" : "none" }}
       >
         <div className="p-2 overflow-y-auto max-h-64 space-y-1">
           {playlist.map((song, index) => {
@@ -260,7 +260,7 @@ export default function MusicSection() {
                 onClick={() => playSong(index)}
                 className="w-full flex items-center gap-3 p-2 rounded-xl transition-all duration-200 group"
                 style={{
-                  backgroundColor: isActive ? "rgba(200,137,230,0.1)" : "transparent",
+                  backgroundColor: isActive ? "rgba(0,173,181,0.08)" : "transparent",
                 }}
               >
                 <div className="relative w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">

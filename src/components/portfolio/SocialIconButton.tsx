@@ -31,9 +31,9 @@ export default function SocialIconButton({ href, icon, label }: SocialIconButton
 
       <style jsx>{`
         .social-icon-btn:hover {
-          color: #87209e;
-          box-shadow: 0 0 5px #87209e;
-          text-shadow: 0 0 2px #87209e;
+          color: var(--color-accent-200);
+          box-shadow: 0 0 5px var(--color-accent-200);
+          text-shadow: 0 0 2px var(--color-accent-200);
         }
         .social-icon-btn::before {
           content: "";
@@ -48,7 +48,7 @@ export default function SocialIconButton({ href, icon, label }: SocialIconButton
         }
         .social-icon-btn:hover::before {
           transform: scale(1.1);
-          box-shadow: 0 0 15px #801f95;
+          box-shadow: var(--shadow-social-glow);
         }
       `}</style>
     </a>

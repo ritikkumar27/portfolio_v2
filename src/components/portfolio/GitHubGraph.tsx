@@ -28,11 +28,11 @@ type ContributionData = {
 
 
 const LEVEL_COLORS: Record<string, string> = {
-  NONE: "rgba(200, 137, 230, 0.05)",
-  FIRST_QUARTILE: "rgba(192, 132, 245, 0.2)",
-  SECOND_QUARTILE: "rgba(192, 132, 245, 0.4)",
-  THIRD_QUARTILE: "rgba(192, 132, 245, 0.7)",
-  FOURTH_QUARTILE: "#c084f5",
+  NONE: "rgba(0, 173, 181, 0.04)",
+  FIRST_QUARTILE: "rgba(0, 173, 181, 0.2)",
+  SECOND_QUARTILE: "rgba(0, 173, 181, 0.4)",
+  THIRD_QUARTILE: "rgba(0, 173, 181, 0.7)",
+  FOURTH_QUARTILE: "#00ADB5",
 };
 
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -71,7 +71,7 @@ type TooltipState = {
 function Skeleton() {
   return (
     <div className="animate-pulse">
-      <div className="h-5 w-40 rounded mb-6" style={{ backgroundColor: "rgba(200,137,230,0.1)" }} />
+      <div className="h-5 w-40 rounded mb-6" style={{ backgroundColor: "rgba(0,173,181,0.08)" }} />
       <div className="flex gap-1">
         {Array.from({ length: 53 }).map((_, w) => (
           <div key={w} className="flex flex-col gap-1">
@@ -79,7 +79,7 @@ function Skeleton() {
               <div
                 key={d}
                 className="w-3 h-3 rounded-sm"
-                style={{ backgroundColor: "rgba(200,137,230,0.05)" }}
+                style={{ backgroundColor: "rgba(0,173,181,0.04)" }}
               />
             ))}
           </div>
@@ -163,7 +163,7 @@ export default function GitHubGraph() {
         {/* Header row */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl" style={{ backgroundColor: "rgba(200,137,230,0.1)" }}>
+            <div className="p-2 rounded-xl" style={{ backgroundColor: "rgba(0,173,181,0.08)" }}>
               <Icon icon="simple-icons:github" width={22} height={22} className="text-white" />
             </div>
             <span className="text-white" style={{ fontWeight: 600 }}>
@@ -175,7 +175,7 @@ export default function GitHubGraph() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="flex items-center gap-2 px-4 py-1.5 rounded-full"
-              style={{ backgroundColor: "rgba(192,132,245,0.15)", border: "1px solid rgba(192,132,245,0.3)" }}
+              style={{ backgroundColor: "rgba(0,173,181,0.12)", border: "1px solid rgba(0,173,181,0.25)" }}
             >
               <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: "var(--color-accent-100)" }} />
               <span className="text-sm purple" style={{ fontWeight: 600 }}>

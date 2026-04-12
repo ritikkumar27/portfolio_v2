@@ -101,7 +101,7 @@ export default function OverviewSection() {
               style={{
                 padding: "10px 20px",
                 borderRadius: "var(--radius-chip)",
-                outline: "1.7px solid rgba(200, 137, 230, 0.637)",
+                outline: "1.7px solid rgba(0, 173, 181, 0.6)",
                 boxShadow: "var(--shadow-chip)",
                 transition: "outline-color 0.3s, outline-width 0.3s, transform 0.3s",
                 opacity: 0.93,
@@ -116,7 +116,7 @@ export default function OverviewSection() {
 
       <style jsx>{`
         .tech-chip:hover {
-          outline: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+          outline: 2.2px solid rgba(0, 173, 181, 0.85) !important;
         }
       `}</style>
     </section>
