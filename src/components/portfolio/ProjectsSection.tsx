@@ -119,7 +119,7 @@ export default function ProjectsSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <SectionHeading text="My Recent" highlight="Works" />
+        <SectionHeading text="My Recent" highlight="Works" accent="pink" />
         <p className="mt-4 text-white" style={{ fontSize: "var(--font-size-body-lg)" }}>
           Things I&apos;ve built — from web apps and CI/CD pipelines to self-hosted infrastructure.
         </p>

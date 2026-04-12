@@ -57,7 +57,7 @@ export default function GuestbookForm() {
       }}
     >
       <h3 className="text-xl text-white mb-2" style={{ fontWeight: 600 }}>
-        Leave a <span className="purple">Message</span>
+        Leave a <span className="pink">Message</span>
       </h3>
       <p className="text-sm mb-6" style={{ color: "var(--color-text-muted)" }}>
         Sign the digital guestbook and say hi!

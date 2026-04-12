@@ -44,17 +44,17 @@ export default function OverviewSection() {
       >
         <div className="max-w-3xl mx-auto text-left" style={{ fontSize: "var(--font-size-body-lg)" }}>
           <p className="text-white mb-4">
-            I am a passionate <span className="purple">DevOps Enthusiast</span> from India, specializing in modern{" "}
-            <span className="purple">Web Architecture</span>,{" "}
-            <span className="purple">Networking</span>, and{" "}
-            <span className="purple">System Design</span>.
+            I am a passionate <span className="pink">DevOps Enthusiast</span> from India, specializing in modern{" "}
+          <span className="purple">Web Architecture</span>,{" "}
+          <span className="coral">Networking</span>, and{" "}
+          <span className="pink">System Design</span>.
           </p>
           <p className="text-white mb-4">
             I bridge the gap between development and operations to deliver reliable applications.
           </p>
 
           <h3 className="text-white text-xl mt-8 mb-4" style={{ fontWeight: 500 }}>
-            What I <span className="purple">Do</span>
+            What I <span className="coral">Do</span>
           </h3>
           <ul className="space-y-3" style={{ listStyle: "none", paddingLeft: "1px" }}>
             {[
@@ -69,7 +69,7 @@ export default function OverviewSection() {
                   width={18}
                   height={18}
                   className="flex-shrink-0 mt-1"
-                  style={{ color: "var(--color-accent-200)" }}
+                  style={{ color: "var(--color-pink)" }}
                 />
                 <span>{activity}</span>
               </li>
@@ -90,7 +90,7 @@ export default function OverviewSection() {
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <h3 className="text-white text-xl text-center mb-8" style={{ fontWeight: 500 }}>
-          Professional <span className="purple">Skillset</span>
+          Professional <span className="pink">Skillset</span>
         </h3>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
           {technologies.map((tech, idx) => (

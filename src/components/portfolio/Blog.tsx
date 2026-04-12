@@ -13,7 +13,7 @@ export default function Blog() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <SectionHeading text="Blog" highlight="Posts" />
+        <SectionHeading text="Blog" highlight="Posts" accent="pink" />
         <p className="text-white mt-4 mb-8" style={{ fontSize: "var(--font-size-body-lg)" }}>
           I write about things I learn — from DevOps to system design.
         </p>

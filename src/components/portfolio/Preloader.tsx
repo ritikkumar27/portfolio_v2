@@ -24,7 +24,7 @@ export default function Preloader() {
       {/* Animated logo / spinner */}
       <div className="flex flex-col items-center gap-4">
         <div className="text-4xl font-normal text-white tracking-wider">
-          <span className="purple">R</span>K
+          <span className="pink">R</span>K
         </div>
         <div className="flex gap-1">
           <span

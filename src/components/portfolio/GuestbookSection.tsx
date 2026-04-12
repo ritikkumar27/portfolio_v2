@@ -15,7 +15,7 @@ export default function GuestbookSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <SectionHeading text="Guest" highlight="Book" />
+        <SectionHeading text="Guest" highlight="Book" accent="coral" />
         <p className="text-white mt-4" style={{ fontSize: "var(--font-size-body-lg)" }}>
           Leave a message — say hi, share feedback, or just drop a note.
         </p>

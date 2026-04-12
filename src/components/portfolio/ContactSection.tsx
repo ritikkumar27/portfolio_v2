@@ -50,7 +50,7 @@ export default function ContactSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <SectionHeading text="Get In" highlight="Touch" />
+        <SectionHeading text="Get In" highlight="Touch" accent="pink" />
         <p className="text-white mt-4 max-w-2xl mx-auto" style={{ fontSize: "var(--font-size-body-lg)" }}>
           I&apos;m currently open to new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
         </p>
@@ -67,7 +67,7 @@ export default function ContactSection() {
         >
           <div>
             <h3 className="text-xl text-white mb-6" style={{ fontWeight: 600 }}>
-              Contact <span className="purple">Information</span>
+              Contact <span className="coral">Information</span>
             </h3>
 
             <div className="space-y-6">

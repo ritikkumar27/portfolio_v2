@@ -45,15 +45,15 @@ export default function GuestbookList() {
       }}
     >
       <div className="flex items-center gap-2 mb-6">
-        <Icon icon="lucide:message-square" width={20} style={{ color: "var(--color-accent-200)" }} />
+        <Icon icon="lucide:message-square" width={20} style={{ color: "var(--color-coral)" }} />
         <h3 className="text-lg text-white" style={{ fontWeight: 600 }}>
-          Recent <span className="purple">Messages</span>
+          Recent <span className="coral">Messages</span>
         </h3>
         <span
           className="ml-auto text-xs px-2 py-1 rounded-full"
           style={{
-            backgroundColor: "rgba(0, 173, 181, 0.08)",
-            color: "var(--color-accent-100)",
+            backgroundColor: "rgba(240, 84, 84, 0.12)",
+            color: "var(--color-coral)",
           }}
         >
           {messages.length} {messages.length === 1 ? "Message" : "Messages"}
