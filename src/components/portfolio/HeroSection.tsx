@@ -40,7 +40,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             I&apos;M{" "}
-            <strong style={{ color: "var(--color-accent-300)" }}>
+            <strong style={{ color: "var(--color-teal)" }}>
               Ritik Kumar
             </strong>
           </motion.h1>
@@ -62,7 +62,7 @@ export default function HeroSection() {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             A passionate{" "}
-            <span className="purple">DevOps Enthusiast</span>{" "}
+            <span className="pink">DevOps Enthusiast</span>{" "}
             learning to build and deploy modern web Applications and Services.
           </motion.p>
 
@@ -107,8 +107,8 @@ export default function HeroSection() {
           <div
             className="w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center"
             style={{
-              background: "linear-gradient(135deg, var(--color-accent-900), var(--color-accent-800))",
-              boxShadow: "0 0 40px rgba(0, 173, 181, 0.12)",
+              background: "linear-gradient(135deg, #222831, #393E46, rgba(252, 81, 133, 0.2))",
+              boxShadow: "0 0 50px rgba(252, 81, 133, 0.15), 0 0 25px rgba(0, 173, 181, 0.1)",
             }}
           >
             <span className="text-6xl md:text-8xl">💻</span>
