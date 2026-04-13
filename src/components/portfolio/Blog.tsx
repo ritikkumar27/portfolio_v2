@@ -100,7 +100,7 @@ export default function Blog() {
             return (
               <motion.a
                 key={post.id}
-                href={`https://blog.ritikkumar.dev/post/${post.slug}`}
+                href={`https://blog.ritikkumar.dev/p/${post.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
