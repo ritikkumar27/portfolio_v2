@@ -24,7 +24,7 @@ export default function Blog() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const res = await fetch("https://blog.ritikkumar.dev/api/posts/latest");
+        const res = await fetch("https://blog.ritikkumar.dev/api/posts/latest?limit=6");
         if (!res.ok) throw new Error("Failed to fetch posts");
         const data = await res.json();
         setPosts(data);
@@ -72,7 +72,7 @@ export default function Blog() {
 
       {isLoading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...Array(3)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <div
               key={i}
               className="animate-pulse flex flex-col h-full rounded-lg"
