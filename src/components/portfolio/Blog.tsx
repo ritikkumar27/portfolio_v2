@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 import SectionHeading from "./SectionHeading";
 
 interface BlogPost {
@@ -14,6 +15,10 @@ interface BlogPost {
   readingTime: number | string;
   createdAt: string;
   likes: number;
+  views?: number;
+  viewCount?: number;
+  comments?: number;
+  commentCount?: number;
 }
 
 export default function Blog() {
@@ -152,8 +157,21 @@ export default function Blog() {
                     {post.excerpt}
                   </p>
                   
-                  <div className="mt-4 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: "var(--color-pink)" }}>
-                    Read Article <span>→</span>
+                  <div className="mt-4 flex items-center justify-between">
+                    <div className="text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: "var(--color-pink)" }}>
+                      Read Article <span>→</span>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs" style={{ color: "var(--color-text-dim)", opacity: 0.8 }}>
+                      <div className="flex items-center gap-1" title="Views">
+                        <Icon icon="mdi:eye-outline" width={14} />
+                        <span>{post.views ?? post.viewCount ?? 0}</span>
+                      </div>
+                      <div className="flex items-center gap-1" title="Comments">
+                        <Icon icon="mdi:comment-outline" width={14} />
+                        <span>{post.comments ?? post.commentCount ?? 0}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
