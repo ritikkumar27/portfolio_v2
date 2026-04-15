@@ -15,10 +15,8 @@ interface BlogPost {
   readingTime: number | string;
   createdAt: string;
   likes: number;
-  views?: number;
-  viewCount?: number;
-  comments?: number;
-  commentCount?: number;
+  views: number;
+  commentCount: number;
 }
 
 export default function Blog() {
@@ -29,7 +27,9 @@ export default function Blog() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const res = await fetch("https://blog.ritikkumar.dev/api/posts/latest?limit=6");
+        const baseUrl = process.env.NEXT_PUBLIC_BLOG_URL || "https://blog.ritikkumar.dev";
+        const apiUrl = `${baseUrl}/api/posts/latest?limit=6`;
+        const res = await fetch(apiUrl, { cache: "no-store" });
         if (!res.ok) throw new Error("Failed to fetch posts");
         const data = await res.json();
         setPosts(data);
@@ -165,12 +165,16 @@ export default function Blog() {
                     <div className="flex items-center gap-3 text-xs" style={{ color: "var(--color-text-dim)", opacity: 0.8 }}>
                       <div className="flex items-center gap-1" title="Views">
                         <Icon icon="mdi:eye-outline" width={14} />
-                        <span>{post.views ?? post.viewCount ?? 0}</span>
+                        <span>{post.views || 0}</span>
                       </div>
-                      <div className="flex items-center gap-1" title="Comments">
+                      <div className="flex items-center gap-1" title="Likes">
+                        <Icon icon="mdi:heart-outline" width={14} />
+                        <span>{post.likes || 0}</span>
+                      </div>
+                      {/* <div className="flex items-center gap-1" title="Comments">
                         <Icon icon="mdi:comment-outline" width={14} />
-                        <span>{post.comments ?? post.commentCount ?? 0}</span>
-                      </div>
+                        <span>{post.commentCount || 0}</span>
+                      </div> */}
                     </div>
                   </div>
                 </div>
