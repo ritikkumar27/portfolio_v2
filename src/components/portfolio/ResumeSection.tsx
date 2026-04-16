@@ -5,8 +5,8 @@ import { Icon } from "@iconify/react";
 import SectionHeading from "./SectionHeading";
 
 export default function ResumeSection() {
-  const googleDriveLink = "#"; // Replace with your Google Drive Link
-  const downloadLink = "/resume.pdf"; // Place your resume.pdf file in the 'public' directory
+  const googleDriveLink = "https://drive.google.com/file/d/1GpNo9YGHOSKug0Va3z1b1UUMJIo6bpBx/view?usp=sharing";
+  const downloadLink = "/resume.pdf";
 
   return (
     <section id="resume" className="section-padding relative">
