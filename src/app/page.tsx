@@ -9,6 +9,7 @@ import {
   GuestbookSection,
   ProjectsSection,
   GitHubGraph,
+  ResumeSection,
 } from "@/components/portfolio";
 
 import Navigation from "@/components/portfolio/Navigation";
@@ -27,6 +28,7 @@ export default function Portfolio() {
         <main className="max-w-6xl mx-auto px-6">
           <HeroSection />
           <OverviewSection />
+          <ResumeSection />
           <ProjectsSection />
           <GitHubGraph />
           <Blog />
